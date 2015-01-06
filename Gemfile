@@ -26,6 +26,8 @@ gem "nokogiri", "= 1.6.1"
 gem "htmlentities"
 gem "rdiscount"
 
+gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'master'
+
 # for twitter-posting bot
 gem "oauth"
 
