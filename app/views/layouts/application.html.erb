@@ -39,17 +39,19 @@
         title="<%= Rails.application.name %> (<%= @traffic.to_i %>)"></a>
 
         <% links = {
-          "/" => @cur_url == "/" ? Rails.application.name : "Home",
-          "/recent" => "Recent",
-          "/comments" => "Comments"
+          "/" => @cur_url == "/" ? Rails.application.name : t('views.layouts.header.home'),
+          "/recent" => t('views.layouts.header.recent'),
+          "/comments" => t('views.layouts.header.comments')
         } %>
 
+
+
         <% if @user %>
-          <% links.merge!({ "/threads" => "Your Threads",
-            "/stories/new" => "Submit Story" }) %>
+          <% links.merge!({ "/threads" => t('views.layouts.header.your_threads'),
+            "/stories/new" => t('views.layouts.header.submit') }) %>
         <% end %>
 
-        <% links.merge!({ "/search" => "Search" }) %>
+        <% links.merge!({ "/search" => t('views.layouts.header.search') }) %>
 
         <% if @cur_url.present? && !links.keys.include?(@cur_url) &&
         @heading.present? %>
@@ -69,15 +71,15 @@
       <div id="headerright">
         <span class="headerlinks">
         <a href="/filters" <%= @cur_url == "/filters" ?
-          raw("class=\"cur_url\"") : "" %>>Filters</a>
+          raw("class=\"cur_url\"") : "" %>><%= t('views.layouts.header.filters') %></a>
         <% if @user %>
           <% if (count = @user.unread_message_count) > 0 %>
             <a href="/messages" class="new_messages <%= @cur_url == "/messages" ?
-              "cur_url" : "" %>"><%= count %> New Message<%= count == 1 ? "" :
+              "cur_url" : "" %>"><%= count %> <%= t('views.layouts.header.new_msgs') %><%= count == 1 ? "" :
               "s" %></a>
           <% else %>
             <a href="/messages" <%= @cur_url == "/messages" ?
-              raw("class=\"cur_url\"") : "" %>>Messages</a>
+              raw("class=\"cur_url\"") : "" %>><%= t('views.layouts.header.new_msgs') %></a>
           <% end %>
 
           <a href="/settings" <%= @cur_url == "/settings" ?

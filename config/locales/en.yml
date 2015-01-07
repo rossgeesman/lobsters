@@ -2,7 +2,18 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  hello: "Hello World!"
   views:
+    layouts:
+      header:
+        home: "Home"
+        recent: "Recent"
+        comments: "Comments"
+        your_threads: "Your Threads"
+        submit: "Submit Story"
+        search: "Search"
+        filters: "Filters"
+        new_msgs: "New Message"
     comments:
       rss: 
         comments: 'comments'
