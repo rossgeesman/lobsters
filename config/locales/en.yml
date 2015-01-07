@@ -14,3 +14,8 @@ en:
         search: "Search"
         filters: "Filters"
         new_msgs: "New Message"
+    comments:
+      rss: 
+        comments: 'comments'
+      index:
+        page: 'Page'
