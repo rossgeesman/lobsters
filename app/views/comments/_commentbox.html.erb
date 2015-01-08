@@ -16,7 +16,7 @@ data-shortid="<%= comment.short_id if comment.persisted? %>">
   <div style="width: 100%;">
     <%= text_area_tag "comment", comment.comment, :rows => 5,
       :style => "width: 100%;", :autocomplete => "off", :disabled => !@user,
-      :placeholder => (@user ? "" : "You must be logged in to leave a comment.")
+      :placeholder => (@user ? "" : t("views.comments.commentbox.placeholder"))
       %>
 
     <p></p>
@@ -24,7 +24,7 @@ data-shortid="<%= comment.short_id if comment.persisted? %>">
     <div class="markdown_help_toggler">
       <% if @user %>
         <div class="markdown_help_label">
-          Markdown formatting available
+          <%=t 'views.comments.commentbox.markdown_available' %>
         </div>
         <div class="markdown_help_label markdown_help_label_mobile"
         style="display: none;">
@@ -32,15 +32,15 @@ data-shortid="<%= comment.short_id if comment.persisted? %>">
         </div>
       <% end %>
 
-      <%= button_tag "#{comment.new_record?? "Post" : "Update"}",
+      <%= button_tag t("views.comments.commentbox.#{comment.new_record?? "post" : "update"}"),
         :class => "comment-post", :type => "button",
         :disabled => !@user %>
       &nbsp;
-      <%= button_tag "Preview", :class => "comment-preview",
+      <%= button_tag t("views.comments.commentbox.preview"), :class => "comment-preview",
         :type => "button", :disabled => !@user %>
       <% if comment.persisted? || comment.parent_comment_id %>
         &nbsp;
-        <%= button_tag "Cancel", :class => "comment-cancel",
+        <%= button_tag t("views.comments.commentbox.cancel"), :class => "comment-cancel",
           :type => "button" %>
       <% end %>
 

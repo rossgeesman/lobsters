@@ -18,4 +18,19 @@ en:
       rss: 
         comments: 'comments'
       index:
-        page: 'Page'
+        page: "Page %{page}"
+      comment:
+        ago: ago
+        link: link
+        edit: edit
+        delete: delete
+        undelete: undelete
+        reply: reply
+        on_story: on
+      commentbox:
+        placeholder: You must be logged in to leave a comment.
+        markdown_available: Markdown formatting available
+        post: Post
+        update: Update
+        preview: Preview
+        cancel: Cancel
