@@ -295,6 +295,14 @@ class Story < ActiveRecord::Base
     self.created_at >= RECENT_DAYS.days.ago
   end
 
+  def is_unavailable
+    self.unavailable_at != nil
+  end
+  def is_unavailable=(what)
+    self.unavailable_at = (what.to_i == 1 && !self.is_unavailable ?
+      Time.now : nil)
+  end
+
   def is_undeletable_by_user?(user)
     if user && user.is_moderator?
       return true
@@ -311,6 +319,11 @@ class Story < ActiveRecord::Base
     end
 
     all_changes = self.changes.merge(self.tagging_changes)
+    all_changes.delete("unavailable_at")
+
+    if !all_changes.any?
+      return
+    end
 
     m = Moderation.new
     m.moderator_user_id = self.editor.try(:id)
@@ -374,6 +387,10 @@ class Story < ActiveRecord::Base
       self.user_id, nil, false)
   end
 
+  def score
+    upvotes - downvotes
+  end
+
   def short_id_path
     Rails.application.routes.url_helpers.root_path + "s/#{self.short_id}"
   end
@@ -382,8 +399,8 @@ class Story < ActiveRecord::Base
     Rails.application.root_url + "s/#{self.short_id}"
   end
 
-  def score
-    upvotes - downvotes
+  def sorted_taggings
+    self.taggings.sort_by{|t| t.tag.tag }.sort_by{|t| t.tag.is_media?? -1 : 0 }
   end
 
   def tagging_changes
@@ -439,6 +456,14 @@ class Story < ActiveRecord::Base
 
   def to_param
     self.short_id
+  end
+
+  def update_availability
+    if self.is_unavailable && !self.unavailable_at
+      self.unavailable_at = Time.now
+    elsif self.unavailable_at && !self.is_unavailable
+      self.unavailable_at = nil
+    end
   end
 
   def update_comments_count!
