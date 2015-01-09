@@ -1,0 +1,33 @@
+ko:
+  hello: "Hello World!"
+  views:
+    layouts:
+      header:
+        home: "Home"
+        recent: "Recent"
+        comments: "Comments"
+        your_threads: "Your Threads"
+        submit: "Submit Story"
+        search: "Search"
+        filters: "Filters"
+        new_msgs: "New Message"
+    comments:
+      rss: 
+        comments: 'comments'
+      index:
+        page: "%{page} 페이지"
+      comment:
+        ago: 전
+        link: 링크
+        edit: 수정
+        delete: 삭제
+        undelete: 삭제취소
+        reply: 댓글
+        on_story: 글
+      commentbox:
+        placeholder: 댓글을 달려면 로그인해야합니다.
+        markdown_available: 마크다운 사용가능
+        post: 작성
+        update: 수정
+        preview: 미리보기
+        cancel: 취소

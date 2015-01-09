@@ -52,29 +52,39 @@ class="comment <%= comment.current_vote ? (comment.current_vote[:vote] == 1 ?
           e-mailed
         <% end %>
         <%= time_ago_in_words_label((comment.has_been_edited? ?
-          comment.updated_at : comment.created_at), :strip_about => true) %> ago
+          comment.updated_at : comment.created_at), :strip_about => true) %> <%=t 'views.comments.comment.ago' %>
       <% end %>
 
       <% if !comment.previewing %>
         |
-        <a href="<%= comment.url %>">link</a>
+        <a href="<%= comment.url %>">
+          <%=t 'views.comments.comment.link' %>
+        </a>
 
         <% if comment.is_editable_by_user?(@user) %>
           |
-          <a class="comment_editor">edit</a>
+          <a class="comment_editor">
+            <%=t 'views.comments.comment.edit' %>
+          </a>
         <% end %>
 
         <% if comment.is_gone? && comment.is_undeletable_by_user?(@user) %>
           |
-          <a class="comment_undeletor">undelete</a>
+          <a class="comment_undeletor">
+            <%=t 'views.comments.comment.undelete' %>
+          </a>
         <% elsif !comment.is_gone? && comment.is_deletable_by_user?(@user) %>
           |
-          <a class="comment_deletor">delete</a>
+          <a class="comment_deletor">
+            <%=t 'views.comments.comment.delete' %>
+          </a>
         <% end %>
 
         <% if @user && !comment.story.is_gone? && !comment.is_gone? %>
             |
-            <a class="comment_replier">reply</a>
+            <a class="comment_replier">
+              <%=t 'views.comments.comment.reply' %>
+            </a>
         <% end %>
 
         <span class="reason">
@@ -89,7 +99,7 @@ class="comment <%= comment.current_vote ? (comment.current_vote[:vote] == 1 ?
       <% end %>
 
       <% if defined?(show_story) && show_story %>
-        | on:
+        | <%=t 'views.comments.comment.on_story' %>:
         <a href="<%= comment.story.comments_path %>"><%= comment.story.title
           %></a>
       <% end %>
