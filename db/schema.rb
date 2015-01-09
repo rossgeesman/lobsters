@@ -13,22 +13,25 @@
 
 ActiveRecord::Schema.define(version: 20150106195555) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "comments", force: true do |t|
-    t.datetime "created_at",                                                                    null: false
+    t.datetime "created_at",                                                              null: false
     t.datetime "updated_at"
-    t.string   "short_id",           limit: 10,                                 default: "",    null: false
-    t.integer  "story_id",                                                                      null: false
-    t.integer  "user_id",                                                                       null: false
+    t.string   "short_id",           limit: 10,                           default: "",    null: false
+    t.integer  "story_id",                                                                null: false
+    t.integer  "user_id",                                                                 null: false
     t.integer  "parent_comment_id"
     t.integer  "thread_id"
-    t.text     "comment",            limit: 16777215,                                           null: false
-    t.integer  "upvotes",                                                       default: 0,     null: false
-    t.integer  "downvotes",                                                     default: 0,     null: false
-    t.decimal  "confidence",                          precision: 20, scale: 19, default: 0.0,   null: false
-    t.text     "markeddown_comment", limit: 16777215
-    t.boolean  "is_deleted",                                                    default: false
-    t.boolean  "is_moderated",                                                  default: false
-    t.boolean  "is_from_email",                                                 default: false
+    t.text     "comment",                                                                 null: false
+    t.integer  "upvotes",                                                 default: 0,     null: false
+    t.integer  "downvotes",                                               default: 0,     null: false
+    t.decimal  "confidence",                    precision: 20, scale: 19, default: 0.0,   null: false
+    t.text     "markeddown_comment"
+    t.boolean  "is_deleted",                                              default: false
+    t.boolean  "is_moderated",                                            default: false
+    t.boolean  "is_from_email",                                           default: false
     t.integer  "hat_id"
   end
 
@@ -61,9 +64,9 @@ ActiveRecord::Schema.define(version: 20150106195555) do
     t.integer  "user_id"
     t.string   "email"
     t.string   "code"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-    t.text     "memo",       limit: 16777215
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text     "memo"
   end
 
   create_table "keystores", id: false, force: true do |t|
@@ -77,42 +80,42 @@ ActiveRecord::Schema.define(version: 20150106195555) do
     t.datetime "created_at"
     t.integer  "author_user_id"
     t.integer  "recipient_user_id"
-    t.boolean  "has_been_read",                         default: false
+    t.boolean  "has_been_read",                    default: false
     t.string   "subject",              limit: 100
-    t.text     "body",                 limit: 16777215
+    t.text     "body"
     t.string   "short_id",             limit: 30
-    t.boolean  "deleted_by_author",                     default: false
-    t.boolean  "deleted_by_recipient",                  default: false
+    t.boolean  "deleted_by_author",                default: false
+    t.boolean  "deleted_by_recipient",             default: false
   end
 
   add_index "messages", ["short_id"], name: "random_hash", unique: true, using: :btree
 
   create_table "moderations", force: true do |t|
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.integer  "moderator_user_id"
     t.integer  "story_id"
     t.integer  "comment_id"
     t.integer  "user_id"
-    t.text     "action",            limit: 16777215
-    t.text     "reason",            limit: 16777215
+    t.text     "action"
+    t.text     "reason"
   end
 
   create_table "stories", force: true do |t|
     t.datetime "created_at"
     t.integer  "user_id"
-    t.string   "url",                    limit: 250,                                default: ""
-    t.string   "title",                  limit: 150,                                default: "",  null: false
-    t.text     "description",            limit: 16777215
-    t.string   "short_id",               limit: 6,                                  default: "",  null: false
-    t.integer  "is_expired",             limit: 1,                                  default: 0,   null: false
-    t.integer  "upvotes",                                                           default: 0,   null: false
-    t.integer  "downvotes",                                                         default: 0,   null: false
-    t.integer  "is_moderated",           limit: 1,                                  default: 0,   null: false
-    t.decimal  "hotness",                                 precision: 20, scale: 10, default: 0.0, null: false
-    t.text     "markeddown_description", limit: 16777215
-    t.text     "story_cache",            limit: 16777215
-    t.integer  "comments_count",                                                    default: 0,   null: false
+    t.string   "url",                    limit: 250,                           default: ""
+    t.string   "title",                  limit: 150,                           default: "",  null: false
+    t.text     "description"
+    t.string   "short_id",               limit: 6,                             default: "",  null: false
+    t.integer  "is_expired",             limit: 2,                             default: 0,   null: false
+    t.integer  "upvotes",                                                      default: 0,   null: false
+    t.integer  "downvotes",                                                    default: 0,   null: false
+    t.integer  "is_moderated",           limit: 2,                             default: 0,   null: false
+    t.decimal  "hotness",                            precision: 20, scale: 10, default: 0.0, null: false
+    t.text     "markeddown_description"
+    t.text     "story_cache"
+    t.integer  "comments_count",                                               default: 0,   null: false
     t.integer  "merged_story_id"
     t.datetime "unavailable_at"
   end
@@ -121,7 +124,7 @@ ActiveRecord::Schema.define(version: 20150106195555) do
   add_index "stories", ["is_expired", "is_moderated"], name: "is_idxes", using: :btree
   add_index "stories", ["merged_story_id"], name: "index_stories_on_merged_story_id", using: :btree
   add_index "stories", ["short_id"], name: "unique_short_id", unique: true, using: :btree
-  add_index "stories", ["url"], name: "url", length: {"url"=>191}, using: :btree
+  add_index "stories", ["url"], name: "url", using: :btree
 
   create_table "tag_filters", force: true do |t|
     t.datetime "created_at", null: false
@@ -155,25 +158,25 @@ ActiveRecord::Schema.define(version: 20150106195555) do
     t.string   "email",                limit: 100
     t.string   "password_digest",      limit: 75
     t.datetime "created_at"
-    t.boolean  "email_notifications",                   default: false
-    t.boolean  "is_admin",                              default: false
+    t.boolean  "email_notifications",              default: false
+    t.boolean  "is_admin",                         default: false
     t.string   "password_reset_token", limit: 75
-    t.string   "session_token",        limit: 75,       default: "",    null: false
-    t.text     "about",                limit: 16777215
+    t.string   "session_token",        limit: 75,  default: "",    null: false
+    t.text     "about"
     t.integer  "invited_by_user_id"
-    t.boolean  "email_replies",                         default: false
-    t.boolean  "pushover_replies",                      default: false
+    t.boolean  "email_replies",                    default: false
+    t.boolean  "pushover_replies",                 default: false
     t.string   "pushover_user_key"
     t.string   "pushover_device"
-    t.boolean  "email_messages",                        default: true
-    t.boolean  "pushover_messages",                     default: true
-    t.boolean  "is_moderator",                          default: false
-    t.boolean  "email_mentions",                        default: false
-    t.boolean  "pushover_mentions",                     default: false
+    t.boolean  "email_messages",                   default: true
+    t.boolean  "pushover_messages",                default: true
+    t.boolean  "is_moderator",                     default: false
+    t.boolean  "email_mentions",                   default: false
+    t.boolean  "pushover_mentions",                default: false
     t.string   "rss_token",            limit: 75
     t.string   "mailing_list_token",   limit: 75
-    t.integer  "mailing_list_mode",                     default: 0
-    t.integer  "karma",                                 default: 0,     null: false
+    t.integer  "mailing_list_mode",                default: 0
+    t.integer  "karma",                            default: 0,     null: false
     t.datetime "banned_at"
     t.integer  "banned_by_user_id"
     t.string   "banned_reason",        limit: 200
@@ -192,7 +195,7 @@ ActiveRecord::Schema.define(version: 20150106195555) do
     t.integer "user_id",              null: false
     t.integer "story_id",             null: false
     t.integer "comment_id"
-    t.integer "vote",       limit: 1, null: false
+    t.integer "vote",       limit: 2, null: false
     t.string  "reason",     limit: 1
   end
 

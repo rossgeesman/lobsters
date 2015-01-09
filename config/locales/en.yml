@@ -29,3 +29,8 @@ en:
                              below and instructions will be e-mailed to you."
         email: "Email or Username"
         reset_password_btn: "Reset Password"
+    comments:
+      rss: 
+        comments: 'comments'
+      index:
+        page: 'Page'
