@@ -2,7 +2,6 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello World!"
   views:
     layouts:
       application:
@@ -22,4 +21,11 @@ en:
           invitation_queue: "Invitation Queue"
           privacy: "Privacy"
           about: "About"
-
+    login:
+      forgot_password:
+        reset_password: "Reset Password"
+        reset_password_msg: "If you've forgotten your password, 
+                             enter your e-mail address or username
+                             below and instructions will be e-mailed to you."
+        email: "Email or Username"
+        reset_password_btn: "Reset Password"
