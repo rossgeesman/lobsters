@@ -5,12 +5,21 @@ en:
   hello: "Hello World!"
   views:
     layouts:
-      header:
-        home: "Home"
-        recent: "Recent"
-        comments: "Comments"
-        your_threads: "Your Threads"
-        submit: "Submit Story"
-        search: "Search"
-        filters: "Filters"
-        new_msgs: "New Message"
+      application:
+        header:
+          home: "Home"
+          recent: "Recent"
+          comments: "Comments"
+          your_threads: "Your Threads"
+          submit: "Submit Story"
+          search: "Search"
+          filters: "Filters"
+          new_msgs: "New Message"
+          logout: "Logout"
+          login: "Login"
+          logout_confirm: "Are you sure you want to logout?"
+          moderation_log: "Moderation Log"
+          invitation_queue: "Invitation Queue"
+          privacy: "Privacy"
+          about: "About"
+

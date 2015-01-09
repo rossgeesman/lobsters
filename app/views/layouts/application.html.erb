@@ -39,19 +39,19 @@
         title="<%= Rails.application.name %> (<%= @traffic.to_i %>)"></a>
 
         <% links = {
-          "/" => @cur_url == "/" ? Rails.application.name : t('views.layouts.header.home'),
-          "/recent" => t('views.layouts.header.recent'),
-          "/comments" => t('views.layouts.header.comments')
+          "/" => @cur_url == "/" ? Rails.application.name : t('views.layouts.application.header.home'),
+          "/recent" => t('views.layouts.application.header.recent'),
+          "/comments" => t('views.layouts.application.header.comments')
         } %>
 
 
 
         <% if @user %>
-          <% links.merge!({ "/threads" => t('views.layouts.header.your_threads'),
-            "/stories/new" => t('views.layouts.header.submit') }) %>
+          <% links.merge!({ "/threads" => t('views.layouts.application.header.your_threads'),
+            "/stories/new" => t('views.layouts.application.header.submit') }) %>
         <% end %>
 
-        <% links.merge!({ "/search" => t('views.layouts.header.search') }) %>
+        <% links.merge!({ "/search" => t('views.layouts.application.header.search') }) %>
 
         <% if @cur_url.present? && !links.keys.include?(@cur_url) &&
         @heading.present? %>
@@ -71,26 +71,26 @@
       <div id="headerright">
         <span class="headerlinks">
         <a href="/filters" <%= @cur_url == "/filters" ?
-          raw("class=\"cur_url\"") : "" %>><%= t('views.layouts.header.filters') %></a>
+          raw("class=\"cur_url\"") : "" %>><%= t('views.layouts.application.header.filters') %></a>
         <% if @user %>
           <% if (count = @user.unread_message_count) > 0 %>
             <a href="/messages" class="new_messages <%= @cur_url == "/messages" ?
-              "cur_url" : "" %>"><%= count %> <%= t('views.layouts.header.new_msgs') %><%= count == 1 ? "" :
+              "cur_url" : "" %>"><%= count %> <%= t('views.layouts.application.header.new_msgs') %><%= count == 1 ? "" :
               "s" %></a>
           <% else %>
             <a href="/messages" <%= @cur_url == "/messages" ?
-              raw("class=\"cur_url\"") : "" %>><%= t('views.layouts.header.new_msgs') %></a>
+              raw("class=\"cur_url\"") : "" %>><%= t('views.layouts.application.header.new_msgs') %></a>
           <% end %>
 
           <a href="/settings" <%= @cur_url == "/settings" ?
             raw("class=\"cur_url\"") : "" %>><%= @user.username %>
             (<%= @user.karma %>)</a>
 
-          <%= link_to "Logout", { :controller => "login", :action => "logout" },
-            :data => { :confirm => "Are you sure you want to logout?" },
+          <%= link_to t('views.layouts.application.header.logout'), { :controller => "login", :action => "logout" },
+            :data => { :confirm => t('views.layouts.application.header.logout_confirm') },
             :method => "post" %>
         <% else %>
-          <a href="/login">Login</a>
+          <a href="/login"><%= t('views.layouts.application.header.login') %></a>
         <% end %>
         </span>
       </div>
@@ -108,13 +108,13 @@
       <%= yield %>
 
       <div id="footer">
-        <a href="/moderations">Moderation Log</a>
+        <a href="/moderations"><%= t('views.layouts.application.header.moderation_log') %></a>
         <% if @user && !@user.is_new? &&
         (iqc = InvitationRequest.verified_count) > 0 %>
-          <a href="/invitations">Invitation Queue (<%= iqc %>)</a>
+          <a href="/invitations"><%= t('views.layouts.application.header.invitation_queue') %> (<%= iqc %>)</a>
         <% end %>
-        <a href="/privacy">Privacy</a>
-        <a href="/about">About</a>
+        <a href="/privacy"><%= t('views.layouts.application.header.privacy') %></a>
+        <a href="/about"><%= t('views.layouts.application.header.about') %></a>
       </div>
       <div class="clear"></div>
     </div>
