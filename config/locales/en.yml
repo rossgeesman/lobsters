@@ -49,3 +49,12 @@ en:
         update: Update
         preview: Preview
         cancel: Cancel
+    filters:
+      legend: Filtered Tags
+      desc: "To hide stories from the home page that have been tagged with certain tags, check them below."
+      nonuser_desc_html: 'Since you are not logged in, your filters will be stored in a long-lasting browser cookie.  To permanently store your tag filters and have them work across browsers, <a href="/login">login</a> to your account.'
+      hide_table_header: Hide
+      tag_table_header: Tag
+      description_table_header: Description
+      stories_table_header: Stories
+      save: Save Filters

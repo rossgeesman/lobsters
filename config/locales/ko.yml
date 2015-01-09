@@ -31,3 +31,12 @@ ko:
         update: 수정
         preview: 미리보기
         cancel: 취소
+    filters:
+      legend: 태그 필터링
+      desc: "특정 태그에 해당하는 스토리를 홈페이지에서 가리기 위해서 아래에서 체크하세요."
+      nonuser_desc_html: '로그인하지 않은상태에서 선택한 필터는 오래 지속되는 브라우저의 쿠키에 저장됩니다.  영구적으로 필터를 저장하고 여러 브라우저에서 사용 하려면 당신의 계정으로 <a href="/login">로그인</a>하세요.'
+      hide_table_header: 숨김
+      tag_table_header: 태그
+      description_table_header: 설명
+      stories_table_header: 개수
+      save: 필터 저장
