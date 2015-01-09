@@ -40,3 +40,21 @@ ko:
       description_table_header: 설명
       stories_table_header: 개수
       save: 필터 저장
+    global:
+      markdownhelp:
+        emphasized_text: 이탤릭
+        emphasized_text_desc_html: 문자열을 <tt>*별표*</tt>로 감싼다
+        strong_text: 문자열 굵게
+        strong_text_desc_html: 문자열을 <tt>**두개의 별표**</tt>로 감싼다
+        struck_through: 취소선
+        struck_through_desc_html: 문자열을 <tt>~~두개의 물결~~</tt>로 감싼다
+        fixed_width: 고정폭
+        fixed_width_desc_html: 문자열을 <tt>`역따옴표`</tt>로 감싼다
+        linked_text: 링크 문자열
+        linked_text_desc_html: "<tt>[링크 문자열](http://example.com/)</tt> 혹은 문자열 없이 URL만 입력"
+        quoted_text: 인용구
+        quoted_text_desc_html: "<tt>&gt;</tt>를 앞에둔다"
+        pre_text: pre text
+        pre_text_desc_html: "최소<tt>&nbsp;&nbsp;&nbsp;&nbsp;4개의 공백</tt>을 앞에둔다"
+        inline_image: 인라인 이미지
+        inline_image_desc_html: "<tt>![대체 문자열](http://example.com/image.jpg)</tt> (스토리 텍스트에서만 허용)"

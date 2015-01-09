@@ -58,3 +58,21 @@ en:
       description_table_header: Description
       stories_table_header: Stories
       save: Save Filters
+    global:
+      markdownhelp:
+        emphasized_text: emphasized text
+        emphasized_text_desc_html: surround text with <tt>*asterisks*</tt>
+        strong_text: strong text
+        strong_text_desc_html: surround text with <tt>**two asterisks**</tt>
+        struck_through: struck-through
+        struck_through_desc_html: surround text with <tt>~~two tilde characters~~</tt>
+        fixed_width: fixed width
+        fixed_width_desc_html: surround text with <tt>`backticks`</tt>
+        linked_text: linked text
+        linked_text_desc_html: "<tt>[linked text](http://example.com/)</tt> or just a bare URL to create without a title"
+        quoted_text: quoted text
+        quoted_text_desc_html: "prefix text with <tt>&gt;</tt>"
+        pre_text: pre text
+        pre_text_desc_html: "prefix text with at least<tt>&nbsp;&nbsp;&nbsp;&nbsp;4 spaces</tt>"
+        inline_image: inline image
+        inline_image_desc_html: "<tt>![alt text](http://example.com/image.jpg)</tt> (only allowed in story text"
