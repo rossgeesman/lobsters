@@ -38,6 +38,12 @@ en:
         accountability.  If you know <a href=/u/>a current user</a> of the site, ask them for an'
         instructions_2_html: 'invitation or <a href="/invitations/request">request one publicly</a>.'
         instructions_3: "invitation."
+      set_new_password:
+        set_new_password: "Set New Password"
+        username: "Username:"
+        new_password:  "New Password:"
+        again:  "(Again):"
+        set_new_password_btn: "Set New Password"
     comments:
       rss: 
         comments: 'comments'
