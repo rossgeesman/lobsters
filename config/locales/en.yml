@@ -24,11 +24,20 @@ en:
     login:
       forgot_password:
         reset_password: "Reset Password"
-        reset_password_msg: "If you've forgotten your password, 
-                             enter your e-mail address or username
-                             below and instructions will be e-mailed to you."
-        email: "Email or Username"
+        reset_password_msg: "If you've forgotten your password, enter your e-mail address or username below and instructions will be e-mailed to you."
+        email: "E-mail or Username:"
         reset_password_btn: "Reset Password"
+      index:
+        login: "Login"
+        email: "E-mail or Username:"
+        password: "Password:"
+        login_btn: "Login"
+        reset_pw: "Reset your password"
+        forgot_pw: "Forgot your password?"
+        instructions_1_html: 'Not a user yet?  Signup is by invitation only to combat spam and increase 
+        accountability.  If you know <a href=/u/>a current user</a> of the site, ask them for an'
+        instructions_2_html: 'invitation or <a href="/invitations/request">request one publicly</a>.'
+        instructions_3: "invitation."
     comments:
       rss: 
         comments: 'comments'
