@@ -64,3 +64,27 @@ ko:
         page: "%{page} 페이지"
       rss:
         comments: 댓글목록
+    invitations:
+      build:
+        legend: 초대 요청
+        description_1_html: 초대를 요청할 알고있는 <a href="/u/">기존 사용자</a>가 없다면 공개 요청을 할 수 있습니다.
+          공개요청을 하면 당신의 이름과 메모가 로그인한 모든 사용자에게 공개되며 사용자들중 한명이 당신에게 초대를 보낼수 있습니다.
+        description_2: 이메일 주소는 반드시 유효해야하며 이메일로 전송한 URL을 확인해야 요청이 공개됩니다.
+          이메일 주소는 관리자를 제외한 다른 어떤 사용자에게도 공개되지 않습니다.
+        name_label: "이름:"
+        email_label: "이메일:"
+        url_label: "URL:"
+        url_verify_text: 당신임을 검증할수 있는 URL(개인 웹사이트, Github 계정 등)
+        submit_btn: 초대 요청
+      index:
+        legend: 요청중인 초대
+        description: 이 사람들은 초대를 요청했고 이메일 주소를 확인했습니다. 
+          알고 있는 사람이라면 초대장을 보내고 요청을 삭제 할 수 있습니다. 스팸은 관리자에의해 삭제될것입니다.
+        date_time_header: 날짜/시간
+        name_header: 이름
+        memo_header: 메모
+        send_invitation_btn: 초대하기
+        send_invitation_confirm_msg: 정말로 이사람을 초대하고 요청목록에서 삭제 하겠습니까?
+        delete_invitation_btn: 삭제
+        delete_invitation_confirm_msg: 정말로 이 요청을 삭제하겠습니까?
+        no_invitation: 초대를 요청한 목록이 없습니다.

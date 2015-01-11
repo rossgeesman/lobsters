@@ -82,3 +82,30 @@ en:
         page: "Page %{page}"
       rss:
         comments: Comments
+    invitations:
+      build:
+        legend: Request an Invitation
+        description_1_html: If you don't know (or can't find) an <a href="/u/">existing user</a> from whom to request an invitation,
+          you can make a public request for one.
+          This will display your name and memo to all other logged-in users who can then send you an invitation if they recognize you.
+        description_2: Your e-mail address must be valid and confirmed by visiting a URL e-mailed to
+          you before your request will be displayed.  Your e-mail address will not be
+          shown to any other users (except moderators).
+        name_label: "Name:"
+        email_label: "E-mail Address:"
+        url_label: "URL:"
+        url_verify_text: URL to verify you (Personal website, Github account, etc.)
+        submit_btn: Request Invitation
+      index:
+        legend: Requested Invitations
+        description: These persons have requested invitations and confirmed their e-mail
+          addresses.  If you recognize anyone, feel free to send them an invitation and
+          remove their request.  Spam will be cleared out by a moderator.
+        date_time_header: Date/Time
+        name_header: Name
+        memo_header: Memo
+        send_invitation_btn: Send Invitation
+        send_invitation_confirm_msg: Are you sure you want to invite this person and remove this request?
+        delete_invitation_btn: Delete
+        delete_invitation_confirm_msg: Are you sure you want to delete this request?
+        no_invitation: No invitation requests

@@ -1,19 +1,17 @@
 <div class="box wide">
   <div class="legend">
-    Requested Invitations
+    <%= t('views.invitations.index.legend') %>
   </div>
 
   <p>
-  These persons have requested invitations and confirmed their e-mail
-  addresses.  If you recognize anyone, feel free to send them an invitation and
-  remove their request.  Spam will be cleared out by a moderator.
+  <%= t('views.invitations.index.description') %>
   </p>
 
   <table class="data" width="100%" cellspacing=0>
   <tr>
-    <th width="15%">Date/Time</th>
-    <th width="20%">Name</th>
-    <th width="40%">Memo</th>
+    <th width="15%"><%= t('views.invitations.index.date_time_header') %></th>
+    <th width="20%"><%= t('views.invitations.index.name_header') %></th>
+    <th width="40%"><%= t('views.invitations.index.memo_header') %></th>
     <th width="15%"></th>
     <% if @user.is_moderator? %>
       <th></th>
@@ -31,14 +29,12 @@
       <td><%= raw ir.markeddown_memo %></td>
       <td><%= form_tag send_invitation_for_request_path do %>
         <%= hidden_field_tag "code", ir.code %>
-        <%= submit_tag "Send Invitation", :data => { :confirm => "Are " <<
-        "you sure you want to invite this person and remove this request?" } %>
+        <%= submit_tag t('views.invitations.index.send_invitation_btn'), :data => { :confirm => "#{t('views.invitations.index.send_invitation_confirm_msg')}" } %>
       <% end %></td>
       <% if @user.is_moderator? %>
         <td><%= form_tag delete_invitation_request_path do %>
           <%= hidden_field_tag "code", ir.code %>
-          <%= submit_tag "Delete", :data => { :confirm => "Are you sure " <<
-            "you want to delete this request?" } %>
+          <%= submit_tag t('views.invitations.index.delete_invitation_btn'), :data => { :confirm => "#{t('views.invitations.index.delete_invitation_confirm_msg')}" } %>
         <% end %></td>
       <% end %>
     </tr>
@@ -47,7 +43,7 @@
   <% if @invitation_requests.count == 0 %>
     <tr>
       <td colspan=<%= @user.is_moderator?? 5 : 4 %> align="center"><span
-        class="na">No invitation requests</span></td>
+        class="na"><%= t('views.invitations.index.no_invitation') %></span></td>
     </tr>
   <% end %>
   </table>
