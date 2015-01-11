@@ -76,3 +76,9 @@ en:
         pre_text_desc_html: "prefix text with at least<tt>&nbsp;&nbsp;&nbsp;&nbsp;4 spaces</tt>"
         inline_image: inline image
         inline_image_desc_html: "<tt>![alt text](http://example.com/image.jpg)</tt> (only allowed in story text"
+    home:
+      index:
+        recent_leader_html: '<em>The <a href="/newest">newest</a> stories with a random sampling of recently submitted stories that have not yet reached the front page.</em>'
+        page: "Page %{page}"
+      rss:
+        comments: Comments

@@ -58,3 +58,9 @@ ko:
         pre_text_desc_html: "최소<tt>&nbsp;&nbsp;&nbsp;&nbsp;4개의 공백</tt>을 앞에둔다"
         inline_image: 인라인 이미지
         inline_image_desc_html: "<tt>![대체 문자열](http://example.com/image.jpg)</tt> (스토리 텍스트에서만 허용)"
+    home:
+      index:
+        recent_leader_html: '<em><a href="/newest">최신</a> 스토리는 최근에 등록되어 첫페이지에 아직 노출되지 않은 스토리중 랜덤입니다.</em>'
+        page: "%{page} 페이지"
+      rss:
+        comments: 댓글목록

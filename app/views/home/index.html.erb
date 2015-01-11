@@ -1,7 +1,6 @@
 <% if @cur_url == "/recent" %>
   <div class="box" id="leader">
-    <em>The <a href="/newest">newest</a> stories with a random sampling of
-    recently submitted stories that have not yet reached the front page.</em>
+    <%= t('views.home.index.recent_leader_html') %>
   </div>
 <% end %>
 
@@ -13,8 +12,9 @@
 <div class="morelink">
   <% if @page && @page > 1 %>
     <a href="<%= @cur_url %><%= @cur_url == "/" ? "" : "/" %><%=
-      @page == 2 ? "" : "page/#{@page - 1}" %>">&lt;&lt; Page
-      <%= @page - 1 %></a>
+      @page == 2 ? "" : "page/#{@page - 1}" %>">&lt;&lt; 
+      <%= t('views.home.index.page', page: @page - 1) %>
+    </a>
   <% end %>
 
   <% if @show_more %>
@@ -22,6 +22,6 @@
       |
     <% end %>
     <a href="<%= @cur_url %><%= @cur_url == "/" ? "" : "/" %>page/<%=
-      @page + 1 %>">Page <%= @page + 1 %> &gt;&gt;</a>
+      @page + 1 %>"><%= t('views.home.index.page', page: @page + 1) %> &gt;&gt;</a>
   <% end %>
 </div>
