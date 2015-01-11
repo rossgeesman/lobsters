@@ -29,6 +29,11 @@ en:
                              below and instructions will be e-mailed to you."
         email: "Email or Username"
         reset_password_btn: "Reset Password"
+    ban_notification:
+      notify:
+        banned_from: "You have been banned from %{application_name} by %{username} for:"
+        description: You are no longer allowed to login to the site.  If you wish, you can
+          discuss this ban with the moderator by replying to this e-mail.
     comments:
       rss: 
         comments: 'comments'
