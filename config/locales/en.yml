@@ -84,6 +84,20 @@ en:
         action: "Action:"
         reason: "Reason:"
         page: "Page"
+        order_by: "Order By:"
+        relevance: "Relevance"
+        newest: "Newest"
+        points: "Points"
+    search:
+      index:
+        search: "Search"
+        include: "Include:"
+        all: "All"
+        stories: "Stories"
+        comments: "Comments"
+        page: "Page:"
+        result: "result"
+        s: "s"
     comments:
       rss: 
         comments: 'comments'
