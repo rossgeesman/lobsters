@@ -71,6 +71,19 @@ en:
         keep_as_new: "Keep As New"
         send_msg_btn: "Send Message"
         compose_reply: "Compose Reply To"
+    moderations:
+      index:
+        moderation_log: "Moderation Log"
+        date_time: "Date/Time"
+        moderator: "Moderator"
+        details: "Story/Comment/User, Action, Reason"
+        story: "Story:"
+        comment_on: "Comment on"
+        user: "User"
+        deleted: "(deleted)"
+        action: "Action:"
+        reason: "Reason:"
+        page: "Page"
     comments:
       rss: 
         comments: 'comments'
