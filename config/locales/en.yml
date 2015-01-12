@@ -44,6 +44,22 @@ en:
         new_password:  "New Password:"
         again:  "(Again):"
         set_new_password_btn: "Set New Password"
+    messages:
+      index:
+        view_received: "View Received"
+        view_sent: "View Sent"
+        private_messages: "Private Messages"
+        sent: "Sent"
+        from: "From"
+        to: "To"
+        received: "Received"
+        subject: "Subject"
+        ago: "ago"
+        delete_selected: "Delete Selected"
+        no_msg_msg_1: "You do not have any"
+        no_msg_msg_2: "private messages."
+        compose_msg: "Compose Message"
+        send_message_btn: "Send Message"
     comments:
       rss: 
         comments: 'comments'
