@@ -60,6 +60,17 @@ en:
         no_msg_msg_2: "private messages."
         compose_msg: "Compose Message"
         send_message_btn: "Send Message"
+      show:
+        back_to_sent: "Back to Sent Messages"
+        back_to_msgs: "Back to Messages"
+        sent_from: "Sent from"
+        admin: "(administrator)"
+        mod: "(moderator)"
+        ago: "ago"
+        delete_msg_btn: "Delete Message"
+        keep_as_new: "Keep As New"
+        send_msg_btn: "Send Message"
+        compose_reply: "Compose Reply To"
     comments:
       rss: 
         comments: 'comments'

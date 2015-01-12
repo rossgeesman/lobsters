@@ -1,9 +1,9 @@
 <div class="box wide">
   <div class="legend" style="float: right;">
     <% if @message.author_user_id == @user.id %>
-      <a href="/messages/sent">Back to Sent Messages</a>
+      <a href="/messages/sent"><%= t('views.messages.show.back_to_sent') %></a>
     <% else %>
-      <a href="/messages">Back to Messages</a>
+      <a href="/messages"><%= t('views.messages.show.back_to_msgs') %></a>
     <% end %>
   </div>
 
@@ -11,17 +11,17 @@
     <%= @message.subject %>
 
     <div class="sublegend">
-      Sent from <a href="/u/<%= @message.author.username %>"><%=
+      <%= t('views.messages.show.sent_from') %> <a href="/u/<%= @message.author.username %>"><%=
         @message.author.username %></a>
       <% if @message.author.is_admin? %>
-        (administrator)
+        <%= t('views.messages.show.admin') %>
       <% elsif @message.author.is_moderator? %>
-        (moderator)
+        <%= t('views.messages.show.mod') %>
       <% end %>
       to
       <a href="/u/<%= @message.recipient.username %>"><%=
         @message.recipient.username %></a>
-      <%= time_ago_in_words_label(@message.created_at) %> ago
+      <%= time_ago_in_words_label(@message.created_at) %> <%= t('views.messages.show.ago') %>
     </div>
   </div>
 
@@ -34,14 +34,14 @@
   <div class="boxline">
     <div style="float: left;">
       <%= form_tag message_path(@message.short_id), :method => :delete do %>
-        <%= submit_tag "Delete Message" %>
+        <%= submit_tag t('views.messages.show.delete_msg_btn') %>
       <% end %>
     </div>
 
     <div style="float: left; padding-left: 1em;">
       <%= form_tag message_path(@message.short_id) + "/keep_as_new",
       :method => :post do %>
-        <%= submit_tag "Keep As New" %>
+        <%= submit_tag t('views.messages.show.keep_as_new') %>
       <% end %>
     </div>
   </div>
@@ -51,7 +51,7 @@
   <br>
 
   <div class="legend">
-    Compose Reply To <%= @new_message.recipient_username %>
+    <%= t('views.messages.show.compose_reply') %> <%= @new_message.recipient_username %>
   </div>
 
   <%= form_for @new_message, :method => :post do |f| %>
@@ -71,7 +71,7 @@
 
     <div class="boxline">
       <p></p>
-      <%= submit_tag "Send Message" %>
+      <%= submit_tag t('views.messages.show.send_msg_btn') %>
     </div>
   <% end %>
 </div>
