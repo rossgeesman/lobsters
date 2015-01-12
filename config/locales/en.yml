@@ -98,6 +98,52 @@ en:
         page: "Page:"
         result: "result"
         s: "s"
+    settings:
+      index:
+        view_profile: "View Profile"
+        account_settings: "Account Settings"
+        username: "Username:"
+        new_pw: "New Password:"
+        confirm_pw: "Confirm Password:"
+        email: "E-mail Address:"
+        gravatar: "Gravatar"
+        ized: "'ized"
+        user_key: "User Key:"
+        pushover_hint: "For optional comment and message notifications below"
+        pushover_device: "Pushover Device:"
+        pushover_sound: "Pushover Sound:"
+        about: "About:"
+        markdown_help: "Markdown formatting available"
+        comment_reply_settings: "Comment Reply Notification Settings"
+        receive_email: "Receive E-mail:"
+        receive_pushover: "Receive Pushover Alert:"
+        pushover_replies_hint: "Requires user key entered above"
+        comment_mention_settings: "Comment Mention Notification Settings"
+        private_message_settings: "Private Message Notification Settings"
+        mailing_list_settings: "Mailing List Settings"
+        mailing_list_exp_html: 'When enabled, you will receive all newly submitted stories and comments to
+                                your e-mail address entered above, except those stories (and their
+                                comments) filtered by your <a href="/filters">tag filters</a>.  All e-mail
+                                messages will appear to be sent to your private list address shown below
+                                which you can filter on, and e-mails you send to that address will be
+                                posted under your account on this website.  You should keep your unique
+                                list address private to prevent others from posting comments as you.'
+        receive_list_email: "Receive List E-mails:"
+        no_emails: "No E-mails"
+        only_stories: "Only Stories"
+        all_stories_and_comments: "All Stories and Comments"
+        list_address: "List Address:"
+        save_btn: "Save All Settings"
+        delete_account: "Delete Account"
+        delete_account_exp: "To permanently delete your account, verify your current password below.
+                             Your account will be put into a deleted state, your comments will be marked
+                             as deleted and no longer readable by any other users, and your private
+                             messages will be deleted.  Your submitted stories will not be deleted.
+                             Your username will remain reserved and will not be available to use on any
+                             other account."
+        verify_pw: "Verify Password:"
+        delete_acct_btn: "Yes, Delete My Account"
+        invite_new_user: "Invite a New User"
     comments:
       rss: 
         comments: 'comments'
