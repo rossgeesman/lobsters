@@ -54,6 +54,19 @@ en:
         update: Update
         preview: Preview
         cancel: Cancel
+    email_message:
+      notify: 
+        reply: "Reply at %{message_url}"
+    email_reply:
+      mention:
+        username: "%{username} has mention you in a comment:"
+        continue: "Continue this discussion at %{comment_url}"
+    invitation_mailer:
+      invitation:
+        hello: "Hello %{email},"
+        p1: "The user %{username} has invited you to %{name} (%{root_url})%{memo}"
+        p2: "To accept this invitation and create an account, visit the URL below:"
+        p3: "%{root_url}invitations/%{code}"
     filters:
       legend: Filtered Tags
       desc: "To hide stories from the home page that have been tagged with certain tags, check them below."
