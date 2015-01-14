@@ -1,0 +1,95 @@
+ko:
+  hello: "Hello World!"
+  views:
+    layouts:
+      header:
+        home: "Home"
+        recent: "Recent"
+        comments: "Comments"
+        your_threads: "Your Threads"
+        submit: "Submit Story"
+        search: "Search"
+        filters: "Filters"
+        new_msgs: "New Message"
+    ban_notification:
+      notify:
+        banned_from: "%{application_name}에서 %{username}에 의해 다음의 사유로 차단당했습니다."
+        description: 당신은 사이트에 로그인하는것이 더이상 허용되지 않습니다. 
+          만약 로그인을 원한다면 이 메일의 답장으로 관리자에게 의견을 전달 할 수 있습니다.
+    comments:
+      rss: 
+        comments: 'comments'
+      index:
+        page: "%{page} 페이지"
+      comment:
+        ago: 전
+        link: 링크
+        edit: 수정
+        delete: 삭제
+        undelete: 삭제취소
+        reply: 댓글
+        on_story: 글
+      commentbox:
+        placeholder: 댓글을 달려면 로그인해야합니다.
+        markdown_available: 마크다운 사용가능
+        post: 작성
+        update: 수정
+        preview: 미리보기
+        cancel: 취소
+    filters:
+      legend: 태그 필터링
+      desc: "특정 태그에 해당하는 스토리를 홈페이지에서 가리기 위해서 아래에서 체크하세요."
+      nonuser_desc_html: '로그인하지 않은상태에서 선택한 필터는 오래 지속되는 브라우저의 쿠키에 저장됩니다.  영구적으로 필터를 저장하고 여러 브라우저에서 사용 하려면 당신의 계정으로 <a href="/login">로그인</a>하세요.'
+      hide_table_header: 숨김
+      tag_table_header: 태그
+      description_table_header: 설명
+      stories_table_header: 개수
+      save: 필터 저장
+    global:
+      markdownhelp:
+        emphasized_text: 이탤릭
+        emphasized_text_desc_html: 문자열을 <tt>*별표*</tt>로 감싼다
+        strong_text: 문자열 굵게
+        strong_text_desc_html: 문자열을 <tt>**두개의 별표**</tt>로 감싼다
+        struck_through: 취소선
+        struck_through_desc_html: 문자열을 <tt>~~두개의 물결~~</tt>로 감싼다
+        fixed_width: 고정폭
+        fixed_width_desc_html: 문자열을 <tt>`역따옴표`</tt>로 감싼다
+        linked_text: 링크 문자열
+        linked_text_desc_html: "<tt>[링크 문자열](http://example.com/)</tt> 혹은 문자열 없이 URL만 입력"
+        quoted_text: 인용구
+        quoted_text_desc_html: "<tt>&gt;</tt>를 앞에둔다"
+        pre_text: pre text
+        pre_text_desc_html: "최소<tt>&nbsp;&nbsp;&nbsp;&nbsp;4개의 공백</tt>을 앞에둔다"
+        inline_image: 인라인 이미지
+        inline_image_desc_html: "<tt>![대체 문자열](http://example.com/image.jpg)</tt> (스토리 텍스트에서만 허용)"
+    home:
+      index:
+        recent_leader_html: '<em><a href="/newest">최신</a> 스토리는 최근에 등록되어 첫페이지에 아직 노출되지 않은 스토리중 랜덤입니다.</em>'
+        page: "%{page} 페이지"
+      rss:
+        comments: 댓글목록
+    invitations:
+      build:
+        legend: 초대 요청
+        description_1_html: 초대를 요청할 알고있는 <a href="/u/">기존 사용자</a>가 없다면 공개 요청을 할 수 있습니다.
+          공개요청을 하면 당신의 이름과 메모가 로그인한 모든 사용자에게 공개되며 사용자들중 한명이 당신에게 초대를 보낼수 있습니다.
+        description_2: 이메일 주소는 반드시 유효해야하며 이메일로 전송한 URL을 확인해야 요청이 공개됩니다.
+          이메일 주소는 관리자를 제외한 다른 어떤 사용자에게도 공개되지 않습니다.
+        name_label: "이름:"
+        email_label: "이메일:"
+        url_label: "URL:"
+        url_verify_text: 당신임을 검증할수 있는 URL(개인 웹사이트, Github 계정 등)
+        submit_btn: 초대 요청
+      index:
+        legend: 요청중인 초대
+        description: 이 사람들은 초대를 요청했고 이메일 주소를 확인했습니다. 
+          알고 있는 사람이라면 초대장을 보내고 요청을 삭제 할 수 있습니다. 스팸은 관리자에의해 삭제될것입니다.
+        date_time_header: 날짜/시간
+        name_header: 이름
+        memo_header: 메모
+        send_invitation_btn: 초대하기
+        send_invitation_confirm_msg: 정말로 이사람을 초대하고 요청목록에서 삭제 하겠습니까?
+        delete_invitation_btn: 삭제
+        delete_invitation_confirm_msg: 정말로 이 요청을 삭제하겠습니까?
+        no_invitation: 초대를 요청한 목록이 없습니다.

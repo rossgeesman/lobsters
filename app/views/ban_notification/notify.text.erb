@@ -1,6 +1,5 @@
-You have been banned from <%= Rails.application.name %> by <%= @banner.username %> for:
+<%= t('views.ban_notification.notify.banned_from', application_name: Rails.application.name, username: @banner.username) %>
 
   <%= word_wrap(@reason, :line_width => 72).gsub(/\n/, "\n  ") %>
 
-You are no longer allowed to login to the site.  If you wish, you can
-discuss this ban with the moderator by replying to this e-mail.
+<%= t('views.ban_notification.notify.description' %>

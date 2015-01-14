@@ -44,6 +44,11 @@ en:
         new_password:  "New Password:"
         again:  "(Again):"
         set_new_password_btn: "Set New Password"
+    ban_notification:
+      notify:
+        banned_from: "You have been banned from %{application_name} by %{username} for:"
+        description: You are no longer allowed to login to the site.  If you wish, you can
+          discuss this ban with the moderator by replying to this e-mail.
     messages:
       index:
         view_received: "View Received"
@@ -160,4 +165,92 @@ en:
       rss: 
         comments: 'comments'
       index:
-        page: 'Page'
+        page: "Page %{page}"
+      comment:
+        ago: ago
+        link: link
+        edit: edit
+        delete: delete
+        undelete: undelete
+        reply: reply
+        on_story: on
+      commentbox:
+        placeholder: You must be logged in to leave a comment.
+        markdown_available: Markdown formatting available
+        post: Post
+        update: Update
+        preview: Preview
+        cancel: Cancel
+    email_message:
+      notify: 
+        reply: "Reply at %{message_url}"
+    email_reply:
+      mention:
+        username: "%{username} has mention you in a comment:"
+        continue: "Continue this discussion at %{comment_url}"
+    invitation_mailer:
+      invitation:
+        hello: "Hello %{email},"
+        p1: "The user %{username} has invited you to %{name} (%{root_url})%{memo}"
+        p2: "To accept this invitation and create an account, visit the URL below:"
+        p3: "%{root_url}invitations/%{code}"
+    filters:
+      legend: Filtered Tags
+      desc: "To hide stories from the home page that have been tagged with certain tags, check them below."
+      nonuser_desc_html: 'Since you are not logged in, your filters will be stored in a long-lasting browser cookie.  To permanently store your tag filters and have them work across browsers, <a href="/login">login</a> to your account.'
+      hide_table_header: Hide
+      tag_table_header: Tag
+      description_table_header: Description
+      stories_table_header: Stories
+      save: Save Filters
+    global:
+      markdownhelp:
+        emphasized_text: emphasized text
+        emphasized_text_desc_html: surround text with <tt>*asterisks*</tt>
+        strong_text: strong text
+        strong_text_desc_html: surround text with <tt>**two asterisks**</tt>
+        struck_through: struck-through
+        struck_through_desc_html: surround text with <tt>~~two tilde characters~~</tt>
+        fixed_width: fixed width
+        fixed_width_desc_html: surround text with <tt>`backticks`</tt>
+        linked_text: linked text
+        linked_text_desc_html: "<tt>[linked text](http://example.com/)</tt> or just a bare URL to create without a title"
+        quoted_text: quoted text
+        quoted_text_desc_html: "prefix text with <tt>&gt;</tt>"
+        pre_text: pre text
+        pre_text_desc_html: "prefix text with at least<tt>&nbsp;&nbsp;&nbsp;&nbsp;4 spaces</tt>"
+        inline_image: inline image
+        inline_image_desc_html: "<tt>![alt text](http://example.com/image.jpg)</tt> (only allowed in story text"
+    home:
+      index:
+        recent_leader_html: '<em>The <a href="/newest">newest</a> stories with a random sampling of recently submitted stories that have not yet reached the front page.</em>'
+        page: "Page %{page}"
+      rss:
+        comments: Comments
+    invitations:
+      build:
+        legend: Request an Invitation
+        description_1_html: If you don't know (or can't find) an <a href="/u/">existing user</a> from whom to request an invitation,
+          you can make a public request for one.
+          This will display your name and memo to all other logged-in users who can then send you an invitation if they recognize you.
+        description_2: Your e-mail address must be valid and confirmed by visiting a URL e-mailed to
+          you before your request will be displayed.  Your e-mail address will not be
+          shown to any other users (except moderators).
+        name_label: "Name:"
+        email_label: "E-mail Address:"
+        url_label: "URL:"
+        url_verify_text: URL to verify you (Personal website, Github account, etc.)
+        submit_btn: Request Invitation
+      index:
+        legend: Requested Invitations
+        description: These persons have requested invitations and confirmed their e-mail
+          addresses.  If you recognize anyone, feel free to send them an invitation and
+          remove their request.  Spam will be cleared out by a moderator.
+        date_time_header: Date/Time
+        name_header: Name
+        memo_header: Memo
+        send_invitation_btn: Send Invitation
+        send_invitation_confirm_msg: Are you sure you want to invite this person and remove this request?
+        delete_invitation_btn: Delete
+        delete_invitation_confirm_msg: Are you sure you want to delete this request?
+        no_invitation: No invitation requests

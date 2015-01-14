@@ -1,5 +1,5 @@
-<%= @comment.user.username %> has mention you in a comment:
+<%= t('views.email_reply.mention.username', username: @comment.user.username) %>
 
   <%= word_wrap(@comment.plaintext_comment, :line_width => 72).gsub(/\n/, "\n  ") %>
 
-Continue this discussion at <%= @comment.url %>
+<%= t('views.email_reply.mention.continue', comment_url: @comment.url) %>
