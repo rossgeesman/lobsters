@@ -144,6 +144,18 @@ en:
         verify_pw: "Verify Password:"
         delete_acct_btn: "Yes, Delete My Account"
         invite_new_user: "Invite a New User"
+    signup:
+      index:
+        create_account: "Create an Account"
+        instructions_html: 'Signup is currently by invitation only to combat spam and increase 
+        accountability.  If you know <a href="/u/">a current user</a> of the site, 
+        ask them for an invitation.'
+      invite:
+        title: "Pass Along an Invitation"
+        instructions_1: "This community can only grow when members invite new users, just as"
+        instructions_2: "invited you. Take a moment and invite someone you know."
+        or: "or"
+        skip: "Skip"
     comments:
       rss: 
         comments: 'comments'
