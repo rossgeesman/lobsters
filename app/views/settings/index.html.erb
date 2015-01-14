@@ -1,9 +1,9 @@
 <div class="box wide">
   <div class="legend right">
-    <a href="/u/<%= @user.username %>">View Profile</a>
+    <a href="/u/<%= @user.username %>"><%= t('views.settings.index.view_profile') %></a>
   </div>
   <div class="legend">
-    Account Settings
+    <%= t('views.settings.index.account_settings') %>
   </div>
 
   <%= form_for @edit_user, :url => settings_path, :method => :post,
@@ -11,7 +11,7 @@
     <%= error_messages_for f.object %>
 
     <div class="boxline">
-      <%= f.label :username, "Username:", :class => "required" %>
+      <%= f.label :username, t('views.settings.index.username'), :class => "required" %>
       <%= f.text_field :username, :size => 15 %>
       <span class="hint">
         <tt><%= User.username_regex %></tt>
@@ -19,22 +19,22 @@
     </div>
 
     <div class="boxline">
-      <%= f.label :password, "New Password:", :class => "required" %>
+      <%= f.label :password, t('views.settings.index.new_pw'), :class => "required" %>
       <%= f.password_field :password, :size => 40, :autocomplete => "off" %>
     </div>
 
     <div class="boxline">
-      <%= f.label :password_confirmation, "Confirm Password:",
+      <%= f.label :password_confirmation, t('views.settings.index.confirm_pw'),
         :class => "required" %>
       <%= f.password_field :password_confirmation, :size => 40,
         :autocomplete => "off" %>
     </div>
 
     <div class="boxline">
-      <%= f.label :email, "E-mail Address:", :class => "required" %>
+      <%= f.label :email, t('views.settings.index.email'), :class => "required" %>
       <%= f.text_field :email, :size => 40 %>
       <span class="hint">
-        <a href="http://www.gravatar.com/" target="_blank">Gravatar</a>'ized
+        <a href="http://www.gravatar.com/" target="_blank"><%= t('views.settings.index.gravatar') %></a><%= t('views.settings.index.ized') %>
       </span>
     </div>
 
@@ -42,23 +42,23 @@
 
     <div class="boxline">
       <%= f.label :pushover_user_key,
-        raw("<a href=\"https://pushover.net/\">Pushover</a> User Key:"),
+        raw("<a href=\"https://pushover.net/\">Pushover</a> #{t('views.settings.index.user_key')} "),
         :class => "required" %>
       <%= f.text_field :pushover_user_key, :size => 40 %>
       <span class="hint">
-        For optional comment and message notifications below
+        <%= t('views.settings.index.pushover_hint') %>
       </span>
     </div>
 
     <div class="boxline">
-      <%= f.label :pushover_device, "Pushover Device:",
+      <%= f.label :pushover_device, t('views.settings.index.pushover_device'),
         :class => "required" %>
       <%= f.text_field :pushover_device, :placeholder => "optional",
         :size => 15 %>
     </div>
 
     <div class="boxline">
-      <%= f.label :pushover_sound, "Pushover Sound:",
+      <%= f.label :pushover_sound, t('views.settings.index.pushover_sound'),
         :class => "required" %>
       <%= f.select :pushover_sound, Pushover.sounds.map{|k,v| [ v, k ] } %>
     </div>
@@ -66,7 +66,7 @@
     <br>
 
     <div class="boxline">
-      <%= f.label :about, "About:", :class => "required" %>
+      <%= f.label :about, t('views.settings.index.about'), :class => "required" %>
       <%= f.text_area :about, :size => "100x5", :style => "width: 600px;" %>
     </div>
 
@@ -74,7 +74,7 @@
       <div class="boxline markdown_help_toggler" style="margin-left: 9em;
       width: 600px;">
         <div class="markdown_help_label">
-          Markdown formatting available
+          <%= t('views.settings.index.markdown_help') %>
         </div>
 
         <div style="clear: both;"></div>
@@ -84,88 +84,82 @@
     </div>
 
     <div class="legend">
-      Comment Reply Notification Settings
+      <%= t('views.settings.index.comment_reply_settings') %>
     </div>
 
     <div class="boxline">
-      <%= f.label :email_replies, "Receive E-mail:", :class => "required" %>
+      <%= f.label :email_replies, t('views.settings.index.receive_email'), :class => "required" %>
       <%= f.check_box :email_replies %>
     </div>
 
     <div class="boxline">
-      <%= f.label :pushover_replies, "Receive Pushover Alert:",
+      <%= f.label :pushover_replies, t('views.settings.index.receive_pushover'),
         :class => "required" %>
       <%= f.check_box :pushover_replies %>
       <span class="hint">
-        Requires user key entered above
+        <%= t('views.settings.index.pushover_replies_hint') %>
       </span>
     </div>
 
     <br>
 
     <div class="legend">
-      Comment Mention Notification Settings
+      <%= t('views.settings.index.comment_mention_settings') %>
     </div>
 
     <div class="boxline">
-      <%= f.label :email_mentions, "Receive E-mail:", :class => "required" %>
+      <%= f.label :email_mentions, t('views.settings.index.receive_email'), :class => "required" %>
       <%= f.check_box :email_mentions %>
     </div>
 
     <div class="boxline">
-      <%= f.label :pushover_mentions, "Receive Pushover Alert:",
+      <%= f.label :pushover_mentions, t('views.settings.index.receive_pushover'),
         :class => "required" %>
       <%= f.check_box :pushover_mentions %>
       <span class="hint">
-        Requires user key entered above
+        <%= t('views.settings.index.pushover_replies_hint') %>
       </span>
     </div>
 
     <br>
 
     <div class="legend">
-      Private Message Notification Settings
+      <%= t('views.settings.index.private_message_settings') %>
     </div>
 
     <div class="boxline">
-      <%= f.label :email_messages, "Receive E-mail:", :class => "required" %>
+      <%= f.label :email_messages, t('views.settings.index.receive_email'), :class => "required" %>
       <%= f.check_box :email_messages %>
     </div>
 
     <div class="boxline">
-      <%= f.label :pushover_messages, "Receive Pushover Alert:",
+      <%= f.label :pushover_messages, t('views.settings.index.receive_pushover'),
         :class => "required" %>
       <%= f.check_box :pushover_messages %>
       <span class="hint">
-        Requires user key entered above
+        <%= t('views.settings.index.pushover_replies_hint') %>
       </span>
     </div>
 
     <br>
 
     <div class="legend">
-      Mailing List Settings
+      <%= t('views.settings.index.mailing_list_settings') %>
     </div>
 
     <p>
-    When enabled, you will receive all newly submitted stories and comments to
-    your e-mail address entered above, except those stories (and their
-    comments) filtered by your <a href="/filters">tag filters</a>.  All e-mail
-    messages will appear to be sent to your private list address shown below
-    which you can filter on, and e-mails you send to that address will be
-    posted under your account on this website.  You should keep your unique
-    list address private to prevent others from posting comments as you.
+      <%= t('views.settings.index.mailing_list_exp_html') %>
     </p>
 
     <div class="boxline">
-      <%= f.label :mailing_list_mode, "Receive List E-mails:",
+      <%= f.label :mailing_list_mode, t('views.settings.index.receive_list_email'),
         :class => "required" %>
-      <%= f.select :mailing_list_mode, [ [ "No e-mails", 0 ],
-        [ "All stories and comments", 1 ], [ "Only stories", 2 ] ] %>
+      <%= f.select :mailing_list_mode, [ [ t('views.settings.index.no_emails'), 0 ],
+        [ t('views.settings.index.all_stories_and_comments'), 1 ], [ t('views.settings.index.only_stories'), 2 ] ] %>
     </div>
 
     <div class="boxline">
-      <label class="required">List Address:</label>
+      <label class="required"><%= t('views.settings.index.list_address') %></label>
       <span>
       <tt><%= Rails.application.shortname %>-<%=
         @edit_user.mailing_list_token %>@<%= Rails.application.domain %></tt>
@@ -173,7 +167,7 @@
     </div>
 
     <br>
-    <%= f.submit "Save All Settings" %>
+    <%= f.submit t('views.settings.index.save_btn') %>
   <% end %>
 
   <br>
@@ -182,25 +176,20 @@
   <%= form_for @edit_user, :url => delete_account_path, :method => :post,
   :html => { :id => "delete_user" } do |f| %>
     <div class="legend">
-      Delete Account
+      <%= f.submit t('views.settings.index.delete_account') %>
     </div>
 
     <p>
-    To permanently delete your account, verify your current password below.
-    Your account will be put into a deleted state, your comments will be marked
-    as deleted and no longer readable by any other users, and your private
-    messages will be deleted.  Your submitted stories will not be deleted.
-    Your username will remain reserved and will not be available to use on any
-    other account.
+      <%= t('views.settings.index.delete_account_exp') %>
     </p>
 
     <div class="boxline">
-      <%= f.label :password, "Verify Password:", :class => "required" %>
+      <%= f.label :password, t('views.settings.index.verify_pw'), :class => "required" %>
       <%= f.password_field :password, :size => 40, :autocomplete => "off" %>
     </div>
 
     <br>
-    <%= f.submit "Yes, Delete My Account" %>
+    <%= f.submit t('views.settings.index.delete_acct_btn') %>
   <% end %>
 
   <br>
@@ -208,7 +197,7 @@
 
   <a name="invite"></a>
   <div class="legend">
-    Invite a New User
+    <%= t('views.settings.index.invite_new_user') %>
   </div>
 
   <%= render :partial => "users/invitationform" %>

@@ -1,20 +1,19 @@
 <div class="box wide">
   <div class="legend">
-    Pass Along an Invitation
+    <%= t('views.signup.invite.title') %>
   </div>
 
   <p>
-  This community can only grow when members invite new users, just as
-  <strong><%= @user.invited_by_user.try(:username) %></strong> invited you.
-  Take a moment and invite someone you know.
+    <%= t('views.signup.invite.instructions_1') %><strong><%= @user.invited_by_user.try(:username) %></strong>
+    <%= t('views.signup.invite.instructions_2') %> 
   </p>
 
   <%= render :partial => "users/invitationform",
     :locals => { :return_home => true } %>
 
-  or
+  <%= t('views.signup.invite.or') %>
 
   <p>
-  <%= button_to "Skip", "/", :method => :get %>
+  <%= button_to t('views.signup.invite.skip'), "/", :method => :get %>
   </p>
 </div>

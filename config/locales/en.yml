@@ -24,16 +24,143 @@ en:
     login:
       forgot_password:
         reset_password: "Reset Password"
-        reset_password_msg: "If you've forgotten your password, 
-                             enter your e-mail address or username
-                             below and instructions will be e-mailed to you."
-        email: "Email or Username"
+        reset_password_msg: "If you've forgotten your password, enter your e-mail address or username below and instructions will be e-mailed to you."
+        email: "E-mail or Username:"
         reset_password_btn: "Reset Password"
+      index:
+        login: "Login"
+        email: "E-mail or Username:"
+        password: "Password:"
+        login_btn: "Login"
+        reset_pw: "Reset your password"
+        forgot_pw: "Forgot your password?"
+        instructions_1_html: 'Not a user yet?  Signup is by invitation only to combat spam and increase 
+        accountability.  If you know <a href=/u/>a current user</a> of the site, ask them for an'
+        instructions_2_html: 'invitation or <a href="/invitations/request">request one publicly</a>.'
+        instructions_3: "invitation."
+      set_new_password:
+        set_new_password: "Set New Password"
+        username: "Username:"
+        new_password:  "New Password:"
+        again:  "(Again):"
+        set_new_password_btn: "Set New Password"
     ban_notification:
       notify:
         banned_from: "You have been banned from %{application_name} by %{username} for:"
         description: You are no longer allowed to login to the site.  If you wish, you can
           discuss this ban with the moderator by replying to this e-mail.
+    messages:
+      index:
+        view_received: "View Received"
+        view_sent: "View Sent"
+        private_messages: "Private Messages"
+        sent: "Sent"
+        from: "From"
+        to: "To"
+        received: "Received"
+        subject: "Subject"
+        ago: "ago"
+        delete_selected: "Delete Selected"
+        no_msg_msg_1: "You do not have any"
+        no_msg_msg_2: "private messages."
+        compose_msg: "Compose Message"
+        send_message_btn: "Send Message"
+      show:
+        back_to_sent: "Back to Sent Messages"
+        back_to_msgs: "Back to Messages"
+        sent_from: "Sent from"
+        admin: "(administrator)"
+        mod: "(moderator)"
+        ago: "ago"
+        delete_msg_btn: "Delete Message"
+        keep_as_new: "Keep As New"
+        send_msg_btn: "Send Message"
+        compose_reply: "Compose Reply To"
+    moderations:
+      index:
+        moderation_log: "Moderation Log"
+        date_time: "Date/Time"
+        moderator: "Moderator"
+        details: "Story/Comment/User, Action, Reason"
+        story: "Story:"
+        comment_on: "Comment on"
+        user: "User"
+        deleted: "(deleted)"
+        action: "Action:"
+        reason: "Reason:"
+        page: "Page"
+        order_by: "Order By:"
+        relevance: "Relevance"
+        newest: "Newest"
+        points: "Points"
+    search:
+      index:
+        search: "Search"
+        include: "Include:"
+        all: "All"
+        stories: "Stories"
+        comments: "Comments"
+        page: "Page:"
+        result: "result"
+        s: "s"
+    settings:
+      index:
+        view_profile: "View Profile"
+        account_settings: "Account Settings"
+        username: "Username:"
+        new_pw: "New Password:"
+        confirm_pw: "Confirm Password:"
+        email: "E-mail Address:"
+        gravatar: "Gravatar"
+        ized: "'ized"
+        user_key: "User Key:"
+        pushover_hint: "For optional comment and message notifications below"
+        pushover_device: "Pushover Device:"
+        pushover_sound: "Pushover Sound:"
+        about: "About:"
+        markdown_help: "Markdown formatting available"
+        comment_reply_settings: "Comment Reply Notification Settings"
+        receive_email: "Receive E-mail:"
+        receive_pushover: "Receive Pushover Alert:"
+        pushover_replies_hint: "Requires user key entered above"
+        comment_mention_settings: "Comment Mention Notification Settings"
+        private_message_settings: "Private Message Notification Settings"
+        mailing_list_settings: "Mailing List Settings"
+        mailing_list_exp_html: 'When enabled, you will receive all newly submitted stories and comments to
+                                your e-mail address entered above, except those stories (and their
+                                comments) filtered by your <a href="/filters">tag filters</a>.  All e-mail
+                                messages will appear to be sent to your private list address shown below
+                                which you can filter on, and e-mails you send to that address will be
+                                posted under your account on this website.  You should keep your unique
+                                list address private to prevent others from posting comments as you.'
+        receive_list_email: "Receive List E-mails:"
+        no_emails: "No E-mails"
+        only_stories: "Only Stories"
+        all_stories_and_comments: "All Stories and Comments"
+        list_address: "List Address:"
+        save_btn: "Save All Settings"
+        delete_account: "Delete Account"
+        delete_account_exp: "To permanently delete your account, verify your current password below.
+                             Your account will be put into a deleted state, your comments will be marked
+                             as deleted and no longer readable by any other users, and your private
+                             messages will be deleted.  Your submitted stories will not be deleted.
+                             Your username will remain reserved and will not be available to use on any
+                             other account."
+        verify_pw: "Verify Password:"
+        delete_acct_btn: "Yes, Delete My Account"
+        invite_new_user: "Invite a New User"
+    signup:
+      index:
+        create_account: "Create an Account"
+        instructions_html: 'Signup is currently by invitation only to combat spam and increase 
+        accountability.  If you know <a href="/u/">a current user</a> of the site, 
+        ask them for an invitation.'
+      invite:
+        title: "Pass Along an Invitation"
+        instructions_1: "This community can only grow when members invite new users, just as"
+        instructions_2: "invited you. Take a moment and invite someone you know."
+        or: "or"
+        skip: "Skip"
     comments:
       rss: 
         comments: 'comments'

@@ -1,13 +1,13 @@
 <div class="box wide">
   <div class="legend">
-    Moderation Log
+    <%= t('views.moderations.index.moderation_log') %>
   </div>
 
   <table class="data" width="100%" cellspacing=0>
   <tr>
-    <th width="15%">Date/Time</th>
-    <th width="10%">Moderator</th>
-    <th width="75%">Story/Comment/User, Action, Reason</th>
+    <th width="15%"><%= t('views.moderations.index.date_time') %></th>
+    <th width="10%"><%= t('views.moderations.index.moderator') %></th>
+    <th width="75%"><%= t('views.moderations.index.details') %></th>
   </tr>
   <% bit = 0 %>
   <% @moderations.each do |mod| %>
@@ -16,28 +16,28 @@
       <td><a href="/messages?to=<%= mod.moderator.try(:username) %>"><%=
         mod.moderator.try(:username) %></a></td>
       <td><% if mod.story %>
-          <a href="<%= mod.story.comments_path %>">Story: <%= mod.story.title
+          <a href="<%= mod.story.comments_path %>"><%= t('views.moderations.index.story') %> <%= mod.story.title
             %></a>
         <% elsif mod.comment %>
-          <a href="<%= mod.comment.url %>">Comment on <%=
+          <a href="<%= mod.comment.url %>"><%= t('views.moderations.index.comment_on') %> <%=
             mod.comment.story.title %></a>
         <% elsif mod.user_id %>
           <% if mod.user %>
-            <a href="/u/<%= mod.user.username %>">User
+            <a href="/u/<%= mod.user.username %>"><%= t('views.moderations.index.user') %>
               <%= mod.user.username %></a>
           <% else %>
-            User <%= mod.user_id %> (Deleted)
+            <%= t('views.moderations.index.user') %> <%= mod.user_id %> <%= t('views.moderations.index.deleted') %>
           <% end %>
         <% end %></td>
     </tr>
     <tr class="row<%= bit %> <%= mod.reason.present?? "nobottom" : "" %>">
       <td colspan=2></td>
-      <td>Action: <em><%= mod.action %></em></td>
+      <td><%= t('views.moderations.index.action') %> <em><%= mod.action %></em></td>
     </tr>
     <% if mod.reason.present? %>
       <tr class="row<%= bit %>">
         <td colspan=2></td>
-        <td>Reason: <em><%= mod.reason %></em></td>
+        <td><%= t('views.moderations.index.reason') %> <em><%= mod.reason %></em></td>
       </tr>
     <% end %>
     <% bit = (bit == 1 ? 0 : 1) %>
@@ -47,7 +47,7 @@
 
 <div class="morelink">
   <% if @page > 1 %>
-    <a href="/moderations/page/<%= @page - 1 %>">&lt;&lt; Page
+    <a href="/moderations/page/<%= @page - 1 %>">&lt;&lt; <%= t('views.moderations.index.page') %>
       <%= @page - 1 %></a>
   <% end %>
 
@@ -55,7 +55,7 @@
     <% if @page > 1 %>
       |
     <% end %>
-    <a href="/moderations/page/<%= @page + 1 %>">Page <%= @page + 1
+    <a href="/moderations/page/<%= @page + 1 %>"><%= t('views.moderations.index.page') %> <%= @page + 1
       %> &gt;&gt;</a>
   <% end %>
 </div>

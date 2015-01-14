@@ -1,47 +1,47 @@
 <div class="box">
   <div class="legend">
-    Search
+    <%= t('views.search.index.search') %>
   </div>
 
   <%= form_tag "/search", :method => :get do %>
     <div class="boxline">
       <%= text_field_tag "q", @search.q, { :size => 40 }.
         merge(@search.q.present? ? {} : { :autofocus => "autofocus" }) %>
-      <input type="submit" value="Search">
+      <input type="submit" value="<%= t('views.search.index.search') %>">
     </div>
 
     <div class="boxline">
-      <label class="required">Include:</label>
+      <label class="required"><%= t('views.search.index.include') %></label>
 
       <%= radio_button_tag "what", "all", @search.what == "all" %>
-        <label for="what_all" class="normal">All</label>
+        <label for="what_all" class="normal"><%= t('views.search.index.all') %></label>
 
       &nbsp;
 
       <%= radio_button_tag "what", "stories", @search.what == "stories" %>
-        <label for="what_stories" class="normal">Stories</label>
+        <label for="what_stories" class="normal"><%= t('views.search.index.stories') %></label>
 
       &nbsp;
 
       <%= radio_button_tag "what", "comments", @search.what == "comments" %>
-        <label for="what_comments" class="normal">Comments</label>
+        <label for="what_comments" class="normal"><%= t('views.search.index.comments') %></label>
 
       <br>
 
-      <label class="required">Order By:</label>
+      <label class="required"><%= t('views.search.index.order_by') %></label>
 
       <%= radio_button_tag "order", "relevance", @search.order == "relevance" %>
-        <label for="order_relevance" class="normal">Relevance</label>
+        <label for="order_relevance" class="normal"><%= t('views.search.index.relevance') %></label>
 
       &nbsp;
 
       <%= radio_button_tag "order", "newest", @search.order == "newest" %>
-        <label for="order_newest" class="normal">Newest</label>
+        <label for="order_newest" class="normal"><%= t('views.search.index.newest') %></label>
 
       &nbsp;
 
       <%= radio_button_tag "order", "points", @search.order == "points" %>
-        <label for="order_points" class="normal">Points</label>
+        <label for="order_points" class="normal"><%= t('views.search.index.points') %></label>
     </div>
   <% end %>
 </div>
@@ -50,8 +50,8 @@
   <div class="box">
     <p>
     <div class="legend">
-      <%= @search.total_results %> result<%= @search.total_results == 1 ? "" :
-        "s" %> for "<%= @search.q %>"
+      <%= @search.total_results %> <%= t('views.search.index.result') %><%= @search.total_results == 1 ? "" :
+        t('views.search.index.s') %> for "<%= @search.q %>"
     </div>
     </p>
   </div>
@@ -70,7 +70,7 @@
 
   <% if @search.total_results > @search.per_page %>
     <div class="page_link_buttons">
-      Page:
+      <%= t('views.search.index.page') %>
 
       <% 1.upto(@search.page_count) do |p| %>
         <a href="/search?<%= raw(@search.to_url_params) %>&amp;page=<%= p
