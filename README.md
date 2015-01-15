@@ -1,4 +1,4 @@
-###Korean Hacker News Clone "Sabjil" BRANCH test
+###Korean Hacker News Clone "Sabjil"
 
 Forked from the [Lobsters Project](https://github.com/jcs/lobsters/blob/master/CONTRIBUTING.md). Plan on localizing in Korean, making a few changes and deploying.
 
@@ -16,26 +16,11 @@ Forked from the [Lobsters Project](https://github.com/jcs/lobsters/blob/master/C
 
          sabjil$ bundle
 
-* Create a MySQL (other DBs supported by ActiveRecord may work, only MySQL and
-MariaDB have been tested) database, username, and password and put them in a
-`config/database.yml` file:
+* The Lobsters project officially supports MySQL and MariaDB but we will be using PostgreSQL.
+If on a Mac, you can get PostrgreSQL running with the [Postgres.app](http://postgresapp.com).
 
-          development:
-            adapter: mysql2
-            encoding: utf8mb4
-            reconnect: false
-            database: sabjil_dev
-            socket: /tmp/mysql.sock
-            username: *username*
-            password: *password*
-            
-          test:
-            adapter: sqlite3
-            database: db/test.sqlite3
-            pool: 5
-            timeout: 5000
 
-* Load the schema into the new database:
+* After your database is setup and running, load the schema into the new database:
 
           sabjil$ rake db:schema:load
 
