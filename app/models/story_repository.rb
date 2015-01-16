@@ -28,7 +28,7 @@ class StoryRepository
 
   def newest
     newest = filter_downvoted_and_tags base_scope
-    newest.order("stories.id DESC")
+    newest.order(created_at: :desc)
   end
 
   def newest_by_user(user)
