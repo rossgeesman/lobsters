@@ -1,6 +1,6 @@
 <div class="box wide">
   <div class="legend">
-    Create an Account
+    <%= t('views.signup.invited.create_account') %>
   </div>
 
   <%= form_for @new_user, { :url => signup_path,
@@ -8,16 +8,13 @@
     <%= hidden_field_tag "invitation_code", @invitation.code %>
 
     <p>
-    To create a new account, enter your e-mail address and a password.
-    Your e-mail address will never be shown to users and will only be used
-    if you need to reset your password, or to receive optional new-message
-    alerts.  Your username can be changed later.
+      <%= t('views.signup.invite.instructions') %>
     </p>
 
     <%= error_messages_for(@new_user) %>
 
     <p>
-    <%= f.label :invitation, "Invited By:", :class => "required" %>
+    <%= f.label :invitation, t('views.signup.invite.invited_by') %>, :class => "required" %>
     <span class="d">
       <a href="/u/<%= @invitation.user.username %>" target="_blank"><%=
         @invitation.user.username %></a>
