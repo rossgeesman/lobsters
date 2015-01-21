@@ -34,6 +34,8 @@ gem "oauth"
 # for parsing incoming mail
 gem "mail"
 
+gem 'feedjira', '~> 1.6.0'
+
 group :test, :development do
   gem "rspec-rails", "~> 2.6"
   gem "machinist"
