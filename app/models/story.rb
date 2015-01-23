@@ -62,6 +62,19 @@ class Story < ActiveRecord::Base
     check_tags
   end
 
+  def self.nomalize_url(u)
+    # strip out stupid google analytics parameters
+    if u && (m = u.match(/\A([^\?]+)\?(.+)\z/))
+      params = m[2].split("&")
+      params.reject!{|p|
+        p.match(/^utm_(source|medium|campaign|term|content)=/) }
+
+      u = m[1] << (params.any?? "?" << params.join("&") : "")
+    end
+
+    u.to_s.strip
+  end
+
   def self.find_similar_by_url(url)
     urls = [ url.to_s ]
     urls2 = [ url.to_s ]
@@ -103,6 +116,16 @@ class Story < ActiveRecord::Base
 
   def self.votes_cast_type
     Story.connection.adapter_name.match(/mysql/i) ? "signed" : "integer"
+  end
+
+  def self.create_with_entry(entry: entry, user: user, tag_names: tag_names)
+    find_similar_by_url(nomalize_url(entry.url)) ||
+      create!(
+        url: entry.url,
+        user: user,
+        title: entry.title,
+        tags_a: tag_names
+      )
   end
 
   def as_json(options = {})
@@ -483,16 +506,7 @@ class Story < ActiveRecord::Base
   end
 
   def url=(u)
-    # strip out stupid google analytics parameters
-    if u && (m = u.match(/\A([^\?]+)\?(.+)\z/))
-      params = m[2].split("&")
-      params.reject!{|p|
-        p.match(/^utm_(source|medium|campaign|term|content)=/) }
-
-      u = m[1] << (params.any?? "?" << params.join("&") : "")
-    end
-
-    self[:url] = u.to_s.strip
+    self[:url] = Story.nomalize_url(u)
   end
 
   def url_is_editable_by_user?(user)
