@@ -36,7 +36,7 @@ gem "mail"
 
 group :test, :development do
   gem "rspec-rails", "~> 2.6"
-  gem 'i18n-tasks', '~> 0.7.10'
+  gem 'i18n-tasks', '~> 0.7.11'
   gem "machinist"
   gem "sqlite3"
   gem "faker"
