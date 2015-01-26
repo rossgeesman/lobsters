@@ -175,6 +175,45 @@ en:
         about: "About:"
         markdown: "Markdown formatting available"
         signup_button: "Signup"
+    stories:
+      _form:
+        error_1: "Error: This story was already submitted"
+        error_2: "Please view the"
+        error_3: "previous discussion"
+        error_4: "for this story."
+        notice_1: "Note: This story was already submitted "
+        notice_2: "ago, but may be submitted again."
+        notice_3: "Please view the"
+        notice_4: "previous discussion"
+        notice_5: "for this story first.  If the content has changed or warrants new discussion, you may submit it again."
+        url: "URL:"
+        fetch_title: "Fetch Title"
+        title: "Title:"
+        tags: "Tags:"
+        user: "user"
+        s: "s"
+        filtering: "filtering"
+        text: "Text:"
+        placeholder: "Optional when submitting a URL; please see guidelines"
+        guidelines: "Story submission guidelines"
+        submit_to: "Submit to"
+        guideline_1: "To be able to easily submit a page you're viewing in your browser to %{site_name},
+        drag the bookmarklet to the right to your bookmark bar. You'll be taken to this page with the viewed
+        page's URL and title."
+        guideline_2: "When submitting a URL, the text field is optional and should only
+        be used when additional context or explanation of the URL is
+        needed.  Commentary or opinion should be reserved for a comment,
+        so that it can be voted on separately from the story."
+        guideline_3_html: "Do not editorialize story titles, but when the original story's
+        title has no context or is unclear, please change it.  <strong>Please
+        remove extraneous components from titles such as the name of the
+        site or section.</strong>"
+        guideline_4: "If no tags clearly apply to the story you are submitting, chances
+        are it does not belong here.  Do not overreach with tags if they
+        are not the primary focus of the story."
+        guideline_5: "When the story being submitted is more than a year or so old,
+        please add the year the story was written to the post title in
+        parentheses."
     comments:
       rss: 
         comments: 'comments'
