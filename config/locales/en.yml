@@ -214,6 +214,26 @@ en:
         guideline_5: "When the story being submitted is more than a year or so old,
         please add the year the story was written to the post title in
         parentheses."
+      _listdetail:
+        moderated_by: "[Story removed by"
+        moderator: "moderator"
+        submitter: "original submitter"
+        ago: "ago"
+        by: "by"
+        justnow: "just now"
+        edit: "edit"
+        undelete_confirm: "Are you sure you want to undelete this story?"
+        undelete: "undelete"
+        delete: "delete"
+        flag: "flag"
+        unhide: "unhide"
+        hide: "hide"
+        user: "user"
+        hidden_by: "(Hidden by "
+        discuss: "discuss"
+        comment: "comment"
+        s: "s"
+
     comments:
       rss: 
         comments: 'comments'

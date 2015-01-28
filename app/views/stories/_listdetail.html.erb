@@ -17,8 +17,8 @@ class="story <%= story.vote == 1 ? "upvoted" : "" %> <%= story.vote == -1 ?
         <a href="<%= story.url_or_comments_path %>"><%= story.title %></a>
       <% end %>
       <% if story.is_gone? %>
-        [Story removed by <%= story.is_moderated? ? "moderator" :
-          "original submitter" %>]
+        <%= t('views.stories._listdetail.moderated_by') %> <%= story.is_moderated? ? t('views.stories._listdetail.moderator') :
+          t('views.stories._listdetail.submitter') %>]
       <% end %>
     </span>
     <% if story.can_be_seen_by_user?(@user) %>
@@ -53,15 +53,15 @@ class="story <%= story.vote == 1 ? "upvoted" : "" %> <%= story.vote == -1 ?
             <% end %>><%= ms.user.username %></a>
 
             <%= time_ago_in_words_label(ms.created_at, :strip_about => true) %>
-              ago
+              <%= t('views.stories._listdetail.ago') %>
           </span>
         <% end %>
       <% end %>
     <% end %>
     <div class="byline">
       <% if story.previewing %>
-        by <a><%= story.user.username %></a>
-        just now
+        <%= t('views.stories._listdetail.by') %> <a><%= story.user.username %></a>
+        <%= t('views.stories._listdetail.justnow') %>
       <% else %>
         by <a href="/u/<%= story.user.username %>"
         <% if story.user.is_new? %>
@@ -69,51 +69,51 @@ class="story <%= story.vote == 1 ? "upvoted" : "" %> <%= story.vote == -1 ?
         <% end %>><%= story.user.username %></a>
 
         <%= time_ago_in_words_label(story.created_at, :strip_about => true) %>
-          ago
+          <%= t('views.stories._listdetail.ago') %>
 
         <% if story.is_editable_by_user?(@user) %>
           |
-          <a href="<%= edit_story_path(story.short_id) %>">edit</a>
+          <a href="<%= edit_story_path(story.short_id) %>"><%= t('views.stories._listdetail.edit') %></a>
 
           <% if story.is_gone? && story.is_undeletable_by_user?(@user) %>
             |
-            <%= link_to "undelete", story_undelete_path(story.short_id),
+            <%= link_to t('views.stories._listdetail.undelete'), story_undelete_path(story.short_id),
               :method => :post, :data => {
-              :confirm => "Are you sure you want to undelete this story?" } %>
+              :confirm => t('views.stories._listdetail.undelete_confirm') } %>
           <% elsif !story.is_gone? %>
             |
             <% if story.user_id != @user.try(:id) &&
             @user.try(:is_moderator?) %>
-              <%= link_to "delete", story_path(story.short_id),
+              <%= link_to t('views.stories._listdetail.delete'), story_path(story.short_id),
                 :method => :delete, :class => "mod_story_link" %>
             <% else %>
-              <%= link_to "delete", story_path(story.short_id),
+              <%= link_to t('views.stories._listdetail.delete'), story_path(story.short_id),
                 :method => :delete, :data => {
-                :confirm => "Are you sure you want to delete this story?" } %>
+                :confirm => t('views.stories._listdetail.undelete_confirm') } %>
             <% end %>
           <% end %>
         <% end %>
         <% if !story.is_gone? && @user %>
           <% if @user && @user.can_downvote?(story) %>
-            | <a class="flagger">flag</a>
+            | <a class="flagger"><%= t('views.stories._listdetail.flag') %></a>
           <% end %>
           <% if story.vote == 0 %>
-            | <%= link_to "unhide", story_unhide_path(story.short_id),
+            | <%= link_to t('views.stories._listdetail.unhide'), story_unhide_path(story.short_id),
               :class => "hider" %>
           <% else %>
-            | <%= link_to "hide", story_hide_path(story.short_id),
+            | <%= link_to t('views.stories._listdetail.hide'), story_hide_path(story.short_id),
               :class => "hider" %>
           <% end %>
           <% if defined?(single_story) && single_story && story.hider_count > 0 %>
-            (hidden by <%= pluralize(story.hider_count, "user") %>)
+            <%= t('views.stories._listdetail.hidden_by') %> <%= pluralize(story.hider_count, t('views.stories._listdetail.user')) %>
           <% end %>
         <% end %>
         <% if !story.is_gone? && (@user || story.comments_count > 0) %>
           <span class="comments_label">
             |
             <a href="<%= story.comments_path %>"><%= story.comments_count == 0 ?
-              "discuss" : "#{story.comments_count} comment" <<
-              (story.comments_count == 1 ? "" : "s") %></a>
+              t('views.stories._listdetail.discuss') : "#{story.comments_count} #{ t('views.stories._listdetail.comment')}" <<
+              (story.comments_count == 1 ? "" : "#{t('views.stories._listdetail.s')}") %></a>
           </span>
         <% end %>
 
