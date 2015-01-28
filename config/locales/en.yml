@@ -233,7 +233,17 @@ en:
         discuss: "discuss"
         comment: "comment"
         s: "s"
-
+      edit:
+        edit_story: "Edit Story"
+        merge_into: "Merge Into:"
+        placeholder: "Short id of story into which this story will be merged into."
+        unavailable: "Unavailable:"
+        unavailable_explanation: "Source URL is unavailable, enable display of cached text"
+        mod_reason: "Mod Reason:"
+        markdown_available: "Markdown formatting available"
+        save: "Save"
+        cancel_editing: "cancel editing"
+        or: "or" 
     comments:
       rss: 
         comments: 'comments'
