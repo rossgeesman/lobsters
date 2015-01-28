@@ -243,7 +243,12 @@ en:
         markdown_available: "Markdown formatting available"
         save: "Save"
         cancel_editing: "cancel editing"
-        or: "or" 
+        or: "or"
+      new:
+        submit_story: "Submit a Story"
+        markdown_available: "Markdown formatting available"
+        submit_btn: "Submit"
+        preview_btn: "Preview"
     comments:
       rss: 
         comments: 'comments'
