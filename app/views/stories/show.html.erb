@@ -11,12 +11,11 @@
   <% end %>
 
   <% if @story.is_unavailable && @story.story_cache.present? %>
-    <a id="story_text_expander">Source URL considered unavailable as of <%=
-    time_ago_in_words_label(@story.unavailable_at) %> ago, cached text
-    available</a>
+    <a id="story_text_expander"><%= t('views.stories.show.url_unavailable_1') %> <%=
+    time_ago_in_words_label(@story.unavailable_at) %> <%= t('views.stories.show.url_unavailable_2') %></a>
     <div id="collapsed_story_text">
       <p>
-      <em>All story content copyright of its respective owner.</em>
+      <em><%= t('views.stories.show.copyright') %></em>
       </p>
 
       <div class="story_text">

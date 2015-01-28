@@ -249,6 +249,10 @@ en:
         markdown_available: "Markdown formatting available"
         submit_btn: "Submit"
         preview_btn: "Preview"
+      show:
+        url_unavailable_1: "Source URL considered unavailable as of"
+        url_unavailable_2: "ago, cached text available"
+
     comments:
       rss: 
         comments: 'comments'
