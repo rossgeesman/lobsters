@@ -38,8 +38,6 @@ class StarterDataGenerator
     tag_names.uniq!
     tag_names.empty? ? ["기타"] : tag_names
   end
-
-  
 end
 
 namespace :starter_data do
