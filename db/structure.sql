@@ -791,6 +791,13 @@ CREATE UNIQUE INDEX story_id_tag_id ON taggings USING btree (story_id, tag_id);
 
 
 --
+-- Name: story_title_gin_eng_idx; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX story_title_gin_eng_idx ON stories USING gin (to_tsvector('english'::regconfig, (title)::text));
+
+
+--
 -- Name: tag; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -934,4 +941,6 @@ INSERT INTO schema_migrations (version) VALUES ('20141114184921');
 INSERT INTO schema_migrations (version) VALUES ('20150106195555');
 
 INSERT INTO schema_migrations (version) VALUES ('20150131164151');
+
+INSERT INTO schema_migrations (version) VALUES ('20150131174947');
 
