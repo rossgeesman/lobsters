@@ -27,6 +27,9 @@ gem "mail"
 
 gem 'feedjira', '~> 1.6.0'
 
+# for PostgreSQL full text search
+gem 'textacular', '~> 3.0'
+
 group :test, :development do
   gem "rspec-rails", "~> 2.6"
   gem 'i18n-tasks', '~> 0.7.11'
