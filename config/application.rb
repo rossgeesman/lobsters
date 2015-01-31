@@ -26,6 +26,8 @@ module Lobsters
     config.action_controller.action_on_unpermitted_parameters = :raise
 
     config.cache_store = :file_store, "#{config.root}/tmp/cache/"
+
+    config.active_record.schema_format = :sql
   end
 end
 
