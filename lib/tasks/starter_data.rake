@@ -1,10 +1,9 @@
 # encoding: utf-8
 
-
 class StarterDataGenerator
   def initialize(user_email)
     @user_email = user_email
-    @tag_dictionary = ["스타트업", "DBMS", "자바", "자바스크립트", "루비", "파이썬", "오픈소스", "C", "iOS", "안드로이드", "UX/UI",
+    @tag_dictionary = ["스타트업", "DBMS", "자바", "Java", "자바스크립트", "루비", "파이썬", "오픈소스", "C", "iOS", "안드로이드", "UX\/UI",
      "하드웨어", "IoT", "web", "기계학습", "마케팅", "게임", "보안", "비트코인", "채용", "투자", "PHP", "SQL", "리눅스",
       "디자인", "빅데이터", "DB", "SQL", "마이크로소프트", "사업", "규제", "메이커", "다음카카오", "앱", "애널리틱스", "창업"]
   end
@@ -32,7 +31,7 @@ class StarterDataGenerator
   end
 
   def clean_tag_names(text)
-    regexp_str = "(^|\s)(#{@tag_dictionary.join('|')})(\S{0,3})"
+    regexp_str = "(^|\s)(#{@tag_dictionary.join('|')})[^A-Za-z]{0,3}(\b|\s)"
     tag_names = text.scan(/#{regexp_str}/).collect { |el| el[1] }
 
     tag_names.uniq!
