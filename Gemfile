@@ -30,6 +30,8 @@ gem 'feedjira', '~> 1.6.0'
 # for PostgreSQL full text search
 gem 'textacular', '~> 3.0'
 
+gem 'rails_12factor', group: :production
+
 group :test, :development do
   gem "rspec-rails", "~> 2.6"
   gem 'i18n-tasks', '~> 0.7.11'
@@ -37,3 +39,5 @@ group :test, :development do
   gem "sqlite3"
   gem "faker"
 end
+
+ruby "2.2.0"
