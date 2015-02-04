@@ -252,7 +252,11 @@ en:
       show:
         url_unavailable_1: "Source URL considered unavailable as of"
         url_unavailable_2: "ago, cached text available"
-
+        copyright: "All story content copyright of its respective owner."
+    users:
+      _invitationform:
+        instructions_html: Invitations are unlimited, but persons you invite will be associated with your account in the <a href="/u">user tree</a> and you may be responsible for them if they cause problems.  Please use your discretion when inviting persons you don't personally know.
+        
     comments:
       rss: 
         comments: 'comments'
