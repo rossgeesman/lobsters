@@ -3,22 +3,17 @@ class SearchController < ApplicationController
     @title = "Search"
     @cur_url = "/search"
 
-    @search = Search.new
-
-    if params[:q].to_s.present?
-      @search.q = params[:q].to_s
-      @search.what = params[:what]
-      @search.order = params[:order]
-
-      if params[:page].present?
-        @search.page = params[:page].to_i
-      end
-
-      if @search.valid?
-        @search.search_for_user!(@user)
-      end
+    if params[:q].present?
+      @search_results = search(params[:q])
     end
 
     render :action => "index"
+  end
+
+  private
+
+  def search(query)
+    ActiveRecord::Base.connection.execute("SELECT set_limit(0.01);")
+    Story.fuzzy_search(title: query)
   end
 end
