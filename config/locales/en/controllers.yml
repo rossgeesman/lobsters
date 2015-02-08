@@ -1,0 +1,17 @@
+en:
+  controllers:
+    comments:
+      recent_comment: "^You have already posted a comment here recently."
+      storymissing: "can't find story"
+      invalidparent: "invalid parent comment"
+      missingcomment: "can't find comment"
+      invalidreason: "invalid reason"
+      cantdownvote: "not permitted to downvote"
+      ok: "ok"
+      rssnewestcomments: "RSS 2.0 - Newest Comments"
+      newestcomments: "Newest Comments"
+      threadsfor: "Threads for"
+      yourthreads: "Your Threads"
+
+
+      
