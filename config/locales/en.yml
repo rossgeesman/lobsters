@@ -255,8 +255,35 @@ en:
         copyright: "All story content copyright of its respective owner."
     users:
       _invitationform:
-        instructions_html: Invitations are unlimited, but persons you invite will be associated with your account in the <a href="/u">user tree</a> and you may be responsible for them if they cause problems.  Please use your discretion when inviting persons you don't personally know.
-        
+        instructions_html: Invitations are unlimited, but persons you invite will be associated with your account in the <a href="/u">user tree</a> and you may be responsible for them if they cause problems.  Please use your discretion when inviting persons you don't personally know. 
+        email: "Email Address:"
+        memo: "Memo to User:"
+        send_btn: "Send"
+      list:
+        users: "Users"
+        admin: "administrator"
+        mod: "moderator"
+      tree:
+        users: "Users"
+        admin: "administrator"
+        mod: "moderator"
+      show:
+        sendmsg: "Send a Message"
+        status: "Status:"
+        admin: "administrator"
+        mod: "moderator"
+        user: "user"
+        joined: "Joined:"
+        karma: "Karma:"
+        storiessubmitted: "Stories Submitted:"
+        commentsposted: "Comments Posted:"
+        about: "About:"
+        banned: "Banned:"
+        hats: "Hats:"
+        left: "Left:"
+        default_about: "A mystery..."
+        perstory: "per story/comment"
+        averaging: " %{karma}, averaging "
     comments:
       rss: 
         comments: 'comments'

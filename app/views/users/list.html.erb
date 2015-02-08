@@ -1,5 +1,5 @@
 <div class="box wide">
-  <p><strong>Users (<%= @user_count %>)</strong></p>
+  <p><strong><%= t('views.users.list.users') %> (<%= @user_count %>)</strong></p>
 
   <ul class="user_tree">
   <% @users.each do |user| %>
@@ -12,9 +12,9 @@
         <% end %>
         ><%= user.username %></a>&nbsp;(<%= user.karma %>)
       <% if user.is_admin? %>
-        (administrator)
+        (<%= t('views.users.list.admin') %>)
       <% elsif user.is_moderator? %>
-        (moderator)
+        (<%= t('views.users.list.mod') %>)
       <% end %>
     </li>
   <% end %>

@@ -11,7 +11,7 @@
     </span>
 
     <% if @user && @showing_user.is_active? %>
-      (<a href="/messages?to=<%= @showing_user.username %>">Send a Message</a>)
+      (<a href="/messages?to=<%= @showing_user.username %>"><%= t('views.users.show.sendmsg') %></a>)
     <% end %>
   </div>
 
@@ -21,7 +21,7 @@
     </div>
   <% end %>
 
-  <label class="required">Status:</label>
+  <label class="required"><%= t('views.users.show.status') %></label>
   <span class="d"
   <%= @showing_user.is_banned? ? raw("style=\"color: red;\"") : "" %>>
     <% if @showing_user.is_banned? %>
@@ -31,12 +31,12 @@
     <% else %>
       Active
     <% end %>
-    <%= @showing_user.is_admin? ? "administrator" :
-      (@showing_user.is_moderator? ? "moderator" : "user") %>
+    <%= @showing_user.is_admin? ? t('views.users.show.admin') :
+      (@showing_user.is_moderator? ? t('views.users.show.mod') : t('views.users.show.user')) %>
   </span>
   <br>
 
-  <label class="required">Joined:</label>
+  <label class="required"><%= t('views.users.show.joined') %></label>
   <span class="d">
     <%= time_ago_in_words_label(@showing_user.created_at) %> ago
     <% if @showing_user.invited_by_user %>
@@ -48,7 +48,7 @@
   <br>
 
   <% if @showing_user.is_banned? %>
-    <label class="required">Banned:</label>
+    <label class="required"><%= t('views.users.show.banned') %></label>
     <span class="d">
       <%= time_ago_in_words_label(@showing_user.banned_at) %> ago
       <% if @showing_user.banned_by_user %>
@@ -61,7 +61,7 @@
   <% end %>
 
   <% if @showing_user.hats.any? %>
-    <label class="required">Hats:</label>
+    <label class="required"><%= t('views.users.show.hats') %></label>
     <span class="d">
     <% @showing_user.hats.each do |hat| %>
       <%= hat.to_html_label %>
@@ -71,22 +71,22 @@
   <% end %>
 
   <% if @showing_user.deleted_at? %>
-    <label class="required">Left:</label>
+    <label class="required"><%= t('views.users.show.left') %></label>
     <span class="d">
       <%= time_ago_in_words_label(@showing_user.deleted_at) %> ago
     </span>
     <br>
   <% end %>
 
-  <label class="required">Karma:</label>
+  <label class="required"><%= t('views.users.show.karma') %></label>
   <span class="d">
-    <%= @showing_user.karma %>, averaging <%=
+    <%= t('views.users.show.averaging', karma: @showing_user.karma) %><%=
       number_with_precision(@showing_user.average_karma, :precision => 2) %>
-      per story/comment
+      <%= t('views.users.show.perstory') %>
   </span>
   <br>
 
-  <label class="required">Stories Submitted:</label>
+  <label class="required"><%= t('views.users.show.storiessubmitted') %></label>
   <span class="d">
     <% tag = @showing_user.most_common_story_tag %>
     <a href="/newest/<%= @showing_user.username %>"><%=
@@ -99,7 +99,7 @@
   </span>
   <br>
 
-  <label class="required">Comments Posted:</label>
+  <label class="required"><%= t('views.users.show.commentsposted') %></label>
   <span class="d">
     <a href="/threads/<%= @showing_user.username %>"><%=
       @showing_user.comments_posted_count %></a>
@@ -107,13 +107,13 @@
   <br>
 
   <% if @showing_user.is_active? %>
-    <label class="required">About:</label>
+    <label class="required"><%= t('views.users.show.about') %></label>
 
     <div id="user_about" class="shorten_first_p">
       <% if @showing_user.about.present? %>
         <%= raw @showing_user.linkified_about %>
       <% else %>
-        <span class="na">A mystery...</span>
+        <span class="na"><%= t('views.users.show.default_about') %></span>
       <% end %>
     </div>
   <% end %>
