@@ -1,0 +1,379 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  views:
+    layouts:
+      application:
+        header:
+          home: "Home"
+          recent: "Recent"
+          comments: "Comments"
+          your_threads: "Your Threads"
+          submit: "Submit Story"
+          search: "Search"
+          filters: "Filters"
+          new_msgs: "New Message"
+          logout: "Logout"
+          login: "Login"
+          logout_confirm: "Are you sure you want to logout?"
+          moderation_log: "Moderation Log"
+          invitation_queue: "Invitation Queue"
+          privacy: "Privacy"
+          about: "About"
+    login:
+      forgot_password:
+        reset_password: "Reset Password"
+        reset_password_msg: "If you've forgotten your password, enter your e-mail address or username below and instructions will be e-mailed to you."
+        email: "E-mail or Username:"
+        reset_password_btn: "Reset Password"
+      index:
+        login: "Login"
+        email: "E-mail or Username:"
+        password: "Password:"
+        login_btn: "Login"
+        reset_pw: "Reset your password"
+        forgot_pw: "Forgot your password?"
+        instructions_1_html: 'Not a user yet?  Signup is by invitation only to combat spam and increase 
+        accountability.  If you know <a href=/u/>a current user</a> of the site, ask them for an'
+        instructions_2_html: 'invitation or <a href="/invitations/request">request one publicly</a>.'
+        instructions_3: "invitation."
+      set_new_password:
+        set_new_password: "Set New Password"
+        username: "Username:"
+        new_password:  "New Password:"
+        again:  "(Again):"
+        set_new_password_btn: "Set New Password"
+    ban_notification:
+      notify:
+        banned_from: "You have been banned from %{application_name} by %{username} for:"
+        description: You are no longer allowed to login to the site.  If you wish, you can
+          discuss this ban with the moderator by replying to this e-mail.
+    messages:
+      index:
+        view_received: "View Received"
+        view_sent: "View Sent"
+        private_messages: "Private Messages"
+        sent: "Sent"
+        from: "From"
+        to: "To"
+        received: "Received"
+        subject: "Subject"
+        ago: "ago"
+        delete_selected: "Delete Selected"
+        no_msg_msg_1: "You do not have any"
+        no_msg_msg_2: "private messages."
+        compose_msg: "Compose Message"
+        send_message_btn: "Send Message"
+      show:
+        back_to_sent: "Back to Sent Messages"
+        back_to_msgs: "Back to Messages"
+        sent_from: "Sent from"
+        admin: "(administrator)"
+        mod: "(moderator)"
+        ago: "ago"
+        delete_msg_btn: "Delete Message"
+        keep_as_new: "Keep As New"
+        send_msg_btn: "Send Message"
+        compose_reply: "Compose Reply To"
+    moderations:
+      index:
+        moderation_log: "Moderation Log"
+        date_time: "Date/Time"
+        moderator: "Moderator"
+        details: "Story/Comment/User, Action, Reason"
+        story: "Story:"
+        comment_on: "Comment on"
+        user: "User"
+        deleted: "(deleted)"
+        action: "Action:"
+        reason: "Reason:"
+        page: "Page"
+        order_by: "Order By:"
+        relevance: "Relevance"
+        newest: "Newest"
+        points: "Points"
+    search:
+      index:
+        search: "Search"
+        include: "Include:"
+        all: "All"
+        stories: "Stories"
+        comments: "Comments"
+        page: "Page:"
+        result: "result"
+        s: "s"
+    settings:
+      index:
+        view_profile: "View Profile"
+        account_settings: "Account Settings"
+        username: "Username:"
+        new_pw: "New Password:"
+        confirm_pw: "Confirm Password:"
+        email: "E-mail Address:"
+        gravatar: "Gravatar"
+        ized: "'ized"
+        user_key: "User Key:"
+        pushover_hint: "For optional comment and message notifications below"
+        pushover_device: "Pushover Device:"
+        pushover_sound: "Pushover Sound:"
+        about: "About:"
+        markdown_help: "Markdown formatting available"
+        comment_reply_settings: "Comment Reply Notification Settings"
+        receive_email: "Receive E-mail:"
+        receive_pushover: "Receive Pushover Alert:"
+        pushover_replies_hint: "Requires user key entered above"
+        comment_mention_settings: "Comment Mention Notification Settings"
+        private_message_settings: "Private Message Notification Settings"
+        mailing_list_settings: "Mailing List Settings"
+        mailing_list_exp_html: 'When enabled, you will receive all newly submitted stories and comments to
+                                your e-mail address entered above, except those stories (and their
+                                comments) filtered by your <a href="/filters">tag filters</a>.  All e-mail
+                                messages will appear to be sent to your private list address shown below
+                                which you can filter on, and e-mails you send to that address will be
+                                posted under your account on this website.  You should keep your unique
+                                list address private to prevent others from posting comments as you.'
+        receive_list_email: "Receive List E-mails:"
+        no_emails: "No E-mails"
+        only_stories: "Only Stories"
+        all_stories_and_comments: "All Stories and Comments"
+        list_address: "List Address:"
+        save_btn: "Save All Settings"
+        delete_account: "Delete Account"
+        delete_account_exp: "To permanently delete your account, verify your current password below.
+                             Your account will be put into a deleted state, your comments will be marked
+                             as deleted and no longer readable by any other users, and your private
+                             messages will be deleted.  Your submitted stories will not be deleted.
+                             Your username will remain reserved and will not be available to use on any
+                             other account."
+        verify_pw: "Verify Password:"
+        delete_acct_btn: "Yes, Delete My Account"
+        invite_new_user: "Invite a New User"
+    signup:
+      index:
+        create_account: "Create an Account"
+        instructions_html: 'Signup is currently by invitation only to combat spam and increase 
+        accountability.  If you know <a href="/u/">a current user</a> of the site, 
+        ask them for an invitation.'
+      invite:
+        title: "Pass Along an Invitation"
+        instructions_1: "This community can only grow when members invite new users, just as"
+        instructions_2: "invited you. Take a moment and invite someone you know."
+        or: "or"
+        skip: "Skip"
+      invited:
+        create_account: "Create an Account"
+        instructions: "To create a new account, enter your e-mail address and a password. Your e-mail address will never be shown to users and will only be used if you need to reset your password, or to receive optional new-message alerts.  Your username can be changed later."
+        invited_by: "Invited By:"
+        username: "Username:"
+        email_address: "E-mail Address:"
+        gravatar: "Gravatar"
+        ized: "'ized"
+        password: "Password:"
+        password_again: "Password (again):"
+        about_instructions: "Want to tell us about yourself?  It's optional, but it will be visible in your public profile and can be changed at any time."
+        about: "About:"
+        markdown: "Markdown formatting available"
+        signup_button: "Signup"
+    stories:
+      _form:
+        error_1: "Error: This story was already submitted"
+        error_2: "Please view the"
+        error_3: "previous discussion"
+        error_4: "for this story."
+        notice_1: "Note: This story was already submitted "
+        notice_2: "ago, but may be submitted again."
+        notice_3: "Please view the"
+        notice_4: "previous discussion"
+        notice_5: "for this story first.  If the content has changed or warrants new discussion, you may submit it again."
+        url: "URL:"
+        fetch_title: "Fetch Title"
+        title: "Title:"
+        tags: "Tags:"
+        user: "user"
+        s: "s"
+        filtering: "filtering"
+        text: "Text:"
+        placeholder: "Optional when submitting a URL; please see guidelines"
+        guidelines: "Story submission guidelines"
+        submit_to: "Submit to"
+        guideline_1: "To be able to easily submit a page you're viewing in your browser to %{site_name},
+        drag the bookmarklet to the right to your bookmark bar. You'll be taken to this page with the viewed
+        page's URL and title."
+        guideline_2: "When submitting a URL, the text field is optional and should only
+        be used when additional context or explanation of the URL is
+        needed.  Commentary or opinion should be reserved for a comment,
+        so that it can be voted on separately from the story."
+        guideline_3_html: "Do not editorialize story titles, but when the original story's
+        title has no context or is unclear, please change it.  <strong>Please
+        remove extraneous components from titles such as the name of the
+        site or section.</strong>"
+        guideline_4: "If no tags clearly apply to the story you are submitting, chances
+        are it does not belong here.  Do not overreach with tags if they
+        are not the primary focus of the story."
+        guideline_5: "When the story being submitted is more than a year or so old,
+        please add the year the story was written to the post title in
+        parentheses."
+      _listdetail:
+        moderated_by: "[Story removed by"
+        moderator: "moderator"
+        submitter: "original submitter"
+        ago: "ago"
+        by: "by"
+        justnow: "just now"
+        edit: "edit"
+        undelete_confirm: "Are you sure you want to undelete this story?"
+        undelete: "undelete"
+        delete: "delete"
+        flag: "flag"
+        unhide: "unhide"
+        hide: "hide"
+        user: "user"
+        hidden_by: "(Hidden by "
+        discuss: "discuss"
+        comment: "comment"
+        s: "s"
+      edit:
+        edit_story: "Edit Story"
+        merge_into: "Merge Into:"
+        placeholder: "Short id of story into which this story will be merged into."
+        unavailable: "Unavailable:"
+        unavailable_explanation: "Source URL is unavailable, enable display of cached text"
+        mod_reason: "Mod Reason:"
+        markdown_available: "Markdown formatting available"
+        save: "Save"
+        cancel_editing: "cancel editing"
+        or: "or"
+      new:
+        submit_story: "Submit a Story"
+        markdown_available: "Markdown formatting available"
+        submit_btn: "Submit"
+        preview_btn: "Preview"
+      show:
+        url_unavailable_1: "Source URL considered unavailable as of"
+        url_unavailable_2: "ago, cached text available"
+        copyright: "All story content copyright of its respective owner."
+    users:
+      _invitationform:
+        instructions_html: Invitations are unlimited, but persons you invite will be associated with your account in the <a href="/u">user tree</a> and you may be responsible for them if they cause problems.  Please use your discretion when inviting persons you don't personally know. 
+        email: "Email Address:"
+        memo: "Memo to User:"
+        send_btn: "Send"
+      list:
+        users: "Users"
+        admin: "administrator"
+        mod: "moderator"
+      tree:
+        users: "Users"
+        admin: "administrator"
+        mod: "moderator"
+      show:
+        sendmsg: "Send a Message"
+        status: "Status:"
+        admin: "administrator"
+        mod: "moderator"
+        user: "user"
+        joined: "Joined:"
+        karma: "Karma:"
+        storiessubmitted: "Stories Submitted:"
+        commentsposted: "Comments Posted:"
+        about: "About:"
+        banned: "Banned:"
+        hats: "Hats:"
+        left: "Left:"
+        default_about: "A mystery..."
+        perstory: "per story/comment"
+        averaging: " %{karma}, averaging "
+    comments:
+      rss: 
+        comments: 'comments'
+      index:
+        page: "Page %{page}"
+      comment:
+        ago: ago
+        link: link
+        edit: edit
+        delete: delete
+        undelete: undelete
+        reply: reply
+        on_story: on
+      commentbox:
+        placeholder: You must be logged in to leave a comment.
+        markdown_available: Markdown formatting available
+        post: Post
+        update: Update
+        preview: Preview
+        cancel: Cancel
+    email_message:
+      notify: 
+        reply: "Reply at %{message_url}"
+    email_reply:
+      mention:
+        username: "%{username} has mention you in a comment:"
+        continue: "Continue this discussion at %{comment_url}"
+    invitation_mailer:
+      invitation:
+        hello: "Hello %{email},"
+        p1: "The user %{username} has invited you to %{name} (%{root_url})%{memo}"
+        p2: "To accept this invitation and create an account, visit the URL below:"
+        p3: "%{root_url}invitations/%{code}"
+    filters:
+      legend: Filtered Tags
+      desc: "To hide stories from the home page that have been tagged with certain tags, check them below."
+      nonuser_desc_html: 'Since you are not logged in, your filters will be stored in a long-lasting browser cookie.  To permanently store your tag filters and have them work across browsers, <a href="/login">login</a> to your account.'
+      hide_table_header: Hide
+      tag_table_header: Tag
+      description_table_header: Description
+      stories_table_header: Stories
+      save: Save Filters
+    global:
+      markdownhelp:
+        emphasized_text: emphasized text
+        emphasized_text_desc_html: surround text with <tt>*asterisks*</tt>
+        strong_text: strong text
+        strong_text_desc_html: surround text with <tt>**two asterisks**</tt>
+        struck_through: struck-through
+        struck_through_desc_html: surround text with <tt>~~two tilde characters~~</tt>
+        fixed_width: fixed width
+        fixed_width_desc_html: surround text with <tt>`backticks`</tt>
+        linked_text: linked text
+        linked_text_desc_html: "<tt>[linked text](http://example.com/)</tt> or just a bare URL to create without a title"
+        quoted_text: quoted text
+        quoted_text_desc_html: "prefix text with <tt>&gt;</tt>"
+        pre_text: pre text
+        pre_text_desc_html: "prefix text with at least<tt>&nbsp;&nbsp;&nbsp;&nbsp;4 spaces</tt>"
+        inline_image: inline image
+        inline_image_desc_html: "<tt>![alt text](http://example.com/image.jpg)</tt> (only allowed in story text"
+    home:
+      index:
+        recent_leader_html: '<em>The <a href="/newest">newest</a> stories with a random sampling of recently submitted stories that have not yet reached the front page.</em>'
+        page: "Page %{page}"
+      rss:
+        comments: Comments
+    invitations:
+      build:
+        legend: Request an Invitation
+        description_1_html: If you don't know (or can't find) an <a href="/u/">existing user</a> from whom to request an invitation,
+          you can make a public request for one.
+          This will display your name and memo to all other logged-in users who can then send you an invitation if they recognize you.
+        description_2: Your e-mail address must be valid and confirmed by visiting a URL e-mailed to
+          you before your request will be displayed.  Your e-mail address will not be
+          shown to any other users (except moderators).
+        name_label: "Name:"
+        email_label: "E-mail Address:"
+        url_label: "URL:"
+        url_verify_text: URL to verify you (Personal website, Github account, etc.)
+        submit_btn: Request Invitation
+      index:
+        legend: Requested Invitations
+        description: These persons have requested invitations and confirmed their e-mail
+          addresses.  If you recognize anyone, feel free to send them an invitation and
+          remove their request.  Spam will be cleared out by a moderator.
+        date_time_header: Date/Time
+        name_header: Name
+        memo_header: Memo
+        send_invitation_btn: Send Invitation
+        send_invitation_confirm_msg: Are you sure you want to invite this person and remove this request?
+        delete_invitation_btn: Delete
+        delete_invitation_confirm_msg: Are you sure you want to delete this request?
+        no_invitation: No invitation requests
