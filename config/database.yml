@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+development:
+  <<: *default
+  database: sn_development
+  # username: postgres
+  # host: localhost
+test:
+  <<: *default
+  database: sn_test
+  # username: postgres
+  # host: localhost
+production:
+  <<: *default
+  database: sn_production
