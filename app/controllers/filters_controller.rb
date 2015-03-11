@@ -3,7 +3,7 @@ class FiltersController < ApplicationController
 
   def index
     @cur_url = "/filters"
-    @title = "Filtered Tags"
+    @title = t('controllers.filters.title')
 
     @tags = Tag.active.all_with_story_counts_for(@user)
 
@@ -26,7 +26,7 @@ class FiltersController < ApplicationController
       cookies.permanent[TAG_FILTER_COOKIE] = new_tags.map(&:tag).join(",")
     end
 
-    flash[:success] = "Your filters have been updated."
+    flash[:success] = t('contollers.filters.updatedmsg')
 
     redirect_to filters_path
   end

@@ -1,7 +1,7 @@
 en:
   controllers:
     comments:
-      recent_comment: "^You have already posted a comment here recently."
+      recent_comment: "You have already posted a comment here recently."
       storymissing: "can't find story"
       invalidparent: "invalid parent comment"
       missingcomment: "can't find comment"
@@ -12,6 +12,16 @@ en:
       newestcomments: "Newest Comments"
       threadsfor: "Threads for"
       yourthreads: "Your Threads"
+    application:
+      notloggedin: "not logged in"
+    filters:
+      title: "Filtered Tags"
+      updatedmsg: "Your filters have been updated."
+    home:
+      about: "A mystery."
+      privacy: "You have no privacy."
+      hiddenstories: "Hidden Stories"
+      indextitle: "Private feed for %{username}"
+      neweststories: "Newest Stories"
+      storiesby: "Newest Stories by %{username}"
 
-
-      

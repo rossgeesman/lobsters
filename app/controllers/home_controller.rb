@@ -9,7 +9,7 @@ class HomeController < ApplicationController
       render :action => "about"
     rescue
       render :text => "<div class=\"box wide\">" <<
-        "A mystery." <<
+        t('controllers.home.about') <<
         "</div>", :layout => "application"
     end
   end
@@ -19,7 +19,7 @@ class HomeController < ApplicationController
       render :action => "privacy"
     rescue
       render :text => "<div class=\"box wide\">" <<
-        "You apparently have no privacy." <<
+        t('controllers.home.privacy') <<
         "</div>", :layout => "application"
     end
   end
@@ -29,7 +29,7 @@ class HomeController < ApplicationController
       paginate stories.hidden
     }
 
-    @heading = @title = "Hidden Stories"
+    @heading = @title = t('controllers.home.hiddenstories')
     @cur_url = "/hidden"
 
     render :action => "index"
@@ -50,7 +50,7 @@ class HomeController < ApplicationController
       format.html { render :action => "index" }
       format.rss {
         if @user && params[:token].present?
-          @title = "Private feed for #{@user.username}"
+          @title = t('controllers.home.indextitle', username: @user.username)
         end
 
         render :action => "rss", :layout => false
@@ -64,7 +64,7 @@ class HomeController < ApplicationController
       paginate stories.newest
     }
 
-    @heading = @title = "Newest Stories"
+    @heading = @title = t('controllers.home.neweststories')
     @cur_url = "/newest"
 
     @rss_link = { :title => "RSS 2.0 - Newest Items",
@@ -74,7 +74,7 @@ class HomeController < ApplicationController
       format.html { render :action => "index" }
       format.rss {
         if @user && params[:token].present?
-          @title += " - Private feed for #{@user.username}"
+          @title += t('controllers.home.indextitle', username: @user.username)
         end
 
         render :action => "rss", :layout => false
@@ -90,7 +90,7 @@ class HomeController < ApplicationController
       paginate stories.newest_by_user(by_user)
     }
 
-    @heading = @title = "Newest Stories by #{by_user.username}"
+    @heading = @title = t('controllers.home.storiesby', username: @user.username)
     @cur_url = "/newest/#{by_user.username}"
 
     @newest = true

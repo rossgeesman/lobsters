@@ -16,8 +16,8 @@ data:
   # Locale files to read from
   read:
     - config/locales/%{locale}.yml
-    # - config/locales/*.%{locale}.yml
-    # - config/locales/**/*.%{locale}.yml
+    - config/locales/*.%{locale}.yml
+    - config/locales/**/*.%{locale}.yml
 
   # key => file routes, matched top to bottom
   write:
