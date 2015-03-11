@@ -66,7 +66,7 @@ class << Rails.application
   # whether absolute URLs should include https (does not require that
   # config.force_ssl be on)
   def ssl?
-    true
+    false
   end
 end
 

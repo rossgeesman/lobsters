@@ -56,3 +56,14 @@ in a `config/initializers/production.rb` or similar file:
 
           sabjil$ rails server
 
+
+#### Docker
+
+```
+$ docker build -t sapzil/test .
+$ docker run -it --rm \
+    -p 80:80 \
+    -e SECRET_KEY_BASE=secretkey \
+    -e DATABASE_URL=postgres://postgres:@192.168.59.103/sn_production \
+    sapzil/test
+```
