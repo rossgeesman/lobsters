@@ -6,7 +6,8 @@ MAINTAINER seapy(iamseapy@gmail.com)
 RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main" > /etc/apt/sources.list.d/pgdg.list && \
     apt-get update && \
     DEBIAN_FRONTEND=noninteractive \
-    apt-get install -y --force-yes libpq-dev
+    apt-get install -y --force-yes libpq-dev postgresql-client
+
 
 # libcurl
 RUN apt-get install -y libcurl3 libcurl3-gnutls libcurl4-openssl-dev
