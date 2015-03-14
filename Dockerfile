@@ -4,6 +4,7 @@ MAINTAINER seapy(iamseapy@gmail.com)
 
 # pg
 RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main" > /etc/apt/sources.list.d/pgdg.list && \
+    apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 7FCC7D46ACCC4CF8 && \
     apt-get update && \
     DEBIAN_FRONTEND=noninteractive \
     apt-get install -y --force-yes libpq-dev postgresql-client
