@@ -44,11 +44,11 @@ class << Rails.application
   end
 
   def domain
-    "example.com"
+    ENV["SAPZIL_DOMAIN"] || "example.com"
   end
 
   def name
-    "Example News"
+    ENV["SAPZIL_NAME"] || "Example News"
   end
 
   def root_url
