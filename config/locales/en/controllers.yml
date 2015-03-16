@@ -24,4 +24,7 @@ en:
       indextitle: "Private feed for %{username}"
       neweststories: "Newest Stories"
       storiesby: "Newest Stories by %{username}"
+      recentstories: "Recent Stories"
+      rss: "RSS 2.0 - Newest Items"
+      rss_tagged: "RSS 2.0 - Tagged %{tag} (%{description})"
 

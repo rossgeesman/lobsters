@@ -109,11 +109,11 @@ class HomeController < ApplicationController
       paginate scope
     }
 
-    @heading = @title = "Recent Stories"
+    @heading = @title = t('controllers.home.recentstories')
     @cur_url = "/recent"
 
     # our content changes every page load, so point at /newest.rss to be stable
-    @rss_link = { :title => "RSS 2.0 - Newest Items",
+    @rss_link = { :title => t('controllers.home.rss'),
       :href => "/newest.rss#{@user ? "?token=#{@user.rss_token}" : ""}" }
 
     render :action => "index"
@@ -129,7 +129,7 @@ class HomeController < ApplicationController
     @heading = @title = @tag.description.blank?? @tag.tag : @tag.description
     @cur_url = tag_url(@tag.tag)
 
-    @rss_link = { :title => "RSS 2.0 - Tagged #{@tag.tag} (#{@tag.description})",
+    @rss_link = { :title => t('controllers.home.rss_tagged', tag: @tag.tag, description: @tag.description ),
       :href => "/t/#{@tag.tag}.rss" }
 
     respond_to do |format|
