@@ -74,6 +74,7 @@ $ docker run -it --rm \
     -e DATABASE_URL=postgres://postgres:@192.168.59.103/sn_production \
     -e MANDRILL_USERNAME= \
     -e MANDRILL_APIKEY= \
+    -e GENERATOR_EMAIL= \
     sapzil/sapzil
 ```
 
@@ -85,6 +86,7 @@ $ docker run -it --rm \
     -e DATABASE_URL=postgres://postgres:@192.168.59.103/sn_production \
     -e MANDRILL_USERNAME= \
     -e MANDRILL_APIKEY= \
+    -e GENERATOR_EMAIL= \
     sapzil/sapzil \
     bundle exec rake yourtask
 ```

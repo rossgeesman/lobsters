@@ -53,7 +53,7 @@ namespace :starter_data do
 
   desc 'Generates story data from feed'
   task :feed => [:environment] do |t, args|
-    generator = StarterDataGenerator.new('test@example.com')
+    generator = StarterDataGenerator.new(ENV["GENERATOR_EMAIL"])
     [
       'http://helloworld.naver.com/rss',
       'http://besuccess.com/feed/',
