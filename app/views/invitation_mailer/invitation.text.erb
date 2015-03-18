@@ -1,11 +1,11 @@
-<%= t('views.invitation_mailer.invitation.hello', email: @invitation.email %>
+<%= t('views.invitation_mailer.invitation.hello', email: @invitation.email) %>
 
 <%= t('views.invitation_mailer.invitation.p1', 
       username: @invitation.user.username,
       name: Rails.application.name,
       root_url: Rails.application.root_url,
-      memo: @invitation.memo.present? ? raw("\n\n   #{@invitation.memo}") : ""%>
+      memo: @invitation.memo.present? ? raw("\n\n   #{@invitation.memo}") : "" ) %>
 
-<%= t('views.invitation_mailer.invitation.p2' %>
+<%= t('views.invitation_mailer.invitation.p2') %>
 
 <%= t('views.invitation_mailer.invitation.p3', root_url: Rails.application.root_url, code: @invitation.code) %>
