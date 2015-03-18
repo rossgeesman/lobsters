@@ -46,4 +46,19 @@ en:
       reset_password: "Reset Password"
       invalid_username: "Invalid e-mail address or username."
       password_reset_message: "Password reset instructions have been e-mailed to you."
-      invalid_reset_token: "Invalid reset token.  It may have already been used or you may have copied it incorrectly."
+      invalid_reset_token: "Invalid reset token. It may have already been used or you may have copied it incorrectly."
+    messages:
+      messages_title: "Messages"
+      messages_sent: "Messages Sent"
+      messages_sent: "Your message has been sent to %{user}."
+      message_subject: "Re: %{subject}"
+      message_deleted: "Deleted message."
+      batch_deleted: "Deleted %{number} message%{plural}."
+      message_not_found: "Could not find message."
+    moderation:
+      log: "Moderation Log"
+    search:
+      title: "Search"
+    settings:
+      settings_title: "Account Settings"
+
