@@ -40,4 +40,8 @@ group :test, :development do
   gem "faker"
 end
 
+group :development do
+  gem "letter_opener"
+end
+
 ruby "2.2.0"
