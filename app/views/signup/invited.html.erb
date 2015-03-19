@@ -8,13 +8,13 @@
     <%= hidden_field_tag "invitation_code", @invitation.code %>
 
     <p>
-      <%= t('views.signup.invite.instructions') %>
+      <%= t('views.signup.invited.instructions') %>
     </p>
 
     <%= error_messages_for(@new_user) %>
 
     <p>
-    <%= f.label :invitation, t('views.signup.invite.invited_by') %>, :class => "required" %>
+    <%= f.label :invitation, t('views.signup.invited.invited_by'), :class => "required" %>
     <span class="d">
       <a href="/u/<%= @invitation.user.username %>" target="_blank"><%=
         @invitation.user.username %></a>
@@ -22,25 +22,25 @@
     </p>
 
     <p>
-    <%= f.label :username, t('views.signup.invite.username'), :class => "required" %>
+    <%= f.label :username, t('views.signup.invited.username'), :class => "required" %>
     <%= f.text_field :username, :size => 30 %>
     <span class="hint">
       <tt><%= User.username_regex %></tt>
     </span>
     <br />
 
-    <%= f.label :email, t('views.signup.invite.email_address'), :class => "required" %>
+    <%= f.label :email, t('views.signup.invited.email_address'), :class => "required" %>
     <%= f.email_field :email, :size => 30 %>
     <span class="hint">
-      <a href="http://www.gravatar.com/" target="_blank"><%= t('views.signup.invite.gravatar') %></a><%= t('views.signup.invite.ized') %>
+      <a href="http://www.gravatar.com/" target="_blank"><%= t('views.signup.invited.gravatar') %></a><%= t('views.signup.invited.ized') %>
     </span>
     <br />
 
-    <%= f.label :password, t('views.signup.invite.password'), :class => "required" %>
+    <%= f.label :password, t('views.signup.invited.password'), :class => "required" %>
     <%= f.password_field :password, :size => 30, :autocomplete => "off" %>
     <br />
 
-    <%= f.label :password_confirmation, t('views.signup.invite.password_again'),
+    <%= f.label :password_confirmation, t('views.signup.invited.password_again'),
       :class => "required" %>
     <%= f.password_field :password_confirmation, :size => 30,
       :autocomplete => "off" %>
@@ -48,12 +48,12 @@
     </p>
 
     <p>
-      <%= t('views.signup.invite.about_instructions') %>
+      <%= t('views.signup.invited.about_instructions') %>
     </p>
 
     <p>
     <div class="boxline">
-      <%= f.label :about, t('views.signup.invite.about'), :class => "required" %>
+      <%= f.label :about, t('views.signup.invited.about'), :class => "required" %>
       <%= f.text_area :about, :size => "100x5", :style => "width: 600px;" %>
     </div>
 
@@ -61,7 +61,7 @@
       <div class="boxline markdown_help_toggler"
         style="margin-left: 9em; width: 600px;">
         <div class="markdown_help_label">
-          <%= t('views.signup.invite.markdown') %>
+          <%= t('views.signup.invited.markdown') %>
         </div>
 
         <div style="clear: both;"></div>
@@ -71,7 +71,7 @@
     </div>
 
     <p>
-    <%= submit_tag t('views.signup.invite.signup_button') %>
+    <%= submit_tag t('views.signup.invited.signup_button') %>
     </p>
   <% end %>
 </div>
