@@ -70,8 +70,11 @@ $ docker build -t sapzil/sapzil .
 ```
 $ docker run -it --rm \
     -p 80:80 \
+    -p 443:443 \
     -e SECRET_KEY_BASE=secretkey \
     -e DATABASE_URL=postgres://postgres:@192.168.59.103/sn_production \
+    -e SAPZIL_DOMAIN=sapzil.co \
+    -e SAPZIL_NAME=Sapzil \ 
     -e MANDRILL_USERNAME= \
     -e MANDRILL_APIKEY= \
     -e GENERATOR_EMAIL= \

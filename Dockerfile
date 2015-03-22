@@ -28,3 +28,4 @@ RUN ln -sf /dev/stderr /var/log/nginx/error.log
 
 #(required) nginx port number
 EXPOSE 80
+EXPOSE 443
