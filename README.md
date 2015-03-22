@@ -80,6 +80,7 @@ $ docker run -it --rm \
     -e GENERATOR_EMAIL= \
     -v /somewhere/ssl.crt:/app/config/ssl/ssl.crt \
     -v /somewhere/ssl.key:/app/config/ssl/ssl.key \
+    -v /somewhere/ca.pem:/app/config/ssl/ca.pem \
     sapzil/sapzil
 ```
 
