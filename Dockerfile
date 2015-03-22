@@ -19,6 +19,9 @@ ADD Gemfile.lock /app/Gemfile.lock
 RUN bundle install --without development test
 ADD . /app
 
+# nginx config
+ADD config/nginx.conf /etc/nginx/sites-enabled/default
+
 # nginx log stdout
 RUN ln -sf /dev/stdout /var/log/nginx/access.log
 RUN ln -sf /dev/stderr /var/log/nginx/error.log

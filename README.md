@@ -75,6 +75,8 @@ $ docker run -it --rm \
     -e MANDRILL_USERNAME= \
     -e MANDRILL_APIKEY= \
     -e GENERATOR_EMAIL= \
+    -v /somewhere/ssl.crt:/app/config/ssl/ssl.crt \
+    -v /somewhere/ssl.key:/app/config/ssl/ssl.key \
     sapzil/sapzil
 ```
 
