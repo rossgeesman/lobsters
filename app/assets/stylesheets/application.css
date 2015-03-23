@@ -8,23 +8,26 @@
 /* generics */
 
 /* force a vertical scrollbar to avoid page-shifting */
+
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
 html {
 	overflow-y: scroll;
 }
 
 body, textarea, input, button {
-	font-family: "helvetica neue", arial, sans-serif;
+	font-family: 'Nanum Gothic', serif;
 	font-size: 9.5pt;
 	color: #333;
 }
 
 a {
-	color: #2562dc;
+	color: #4F9F64;
 	cursor: pointer;
 }
 
 ol.stories.list li.story div.details span.link a:visited {
-	color: #7395d9;
+	color: #7FBF90;
 }
 
 h1 {
@@ -44,8 +47,7 @@ div.s {
 }
 
 a.tag {
-	background-color: #fffcd7;
-	border: 1px solid #d5d458;
+	background-color: #D5D5D5;
 	border-radius: 10px;
 	color: #555;
 	font-size: 7.5pt;
