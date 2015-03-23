@@ -59,11 +59,40 @@ in a `config/initializers/production.rb` or similar file:
 
 #### Docker
 
+##### Build
+
 ```
 $ docker build -t sapzil/sapzil .
+```
+
+##### Run application(production enviroment)
+
+```
 $ docker run -it --rm \
     -p 80:80 \
+    -p 443:443 \
     -e SECRET_KEY_BASE=secretkey \
     -e DATABASE_URL=postgres://postgres:@192.168.59.103/sn_production \
+    -e SAPZIL_DOMAIN=sapzil.co \
+    -e SAPZIL_NAME=Sapzil \ 
+    -e MANDRILL_USERNAME= \
+    -e MANDRILL_APIKEY= \
+    -e GENERATOR_EMAIL= \
+    -v /somewhere/ssl.crt:/app/config/ssl/ssl.crt \
+    -v /somewhere/ssl.key:/app/config/ssl/ssl.key \
+    -v /somewhere/ca.pem:/app/config/ssl/ca.pem \
     sapzil/sapzil
+```
+
+##### Run rake task
+
+```
+$ docker run -it --rm \
+    -e SECRET_KEY_BASE=secretkey \
+    -e DATABASE_URL=postgres://postgres:@192.168.59.103/sn_production \
+    -e MANDRILL_USERNAME= \
+    -e MANDRILL_APIKEY= \
+    -e GENERATOR_EMAIL= \
+    sapzil/sapzil \
+    bundle exec rake yourtask
 ```
