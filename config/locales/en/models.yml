@@ -1,0 +1,12 @@
+en:
+  models:
+    comment:
+      cant_be_blank: "cannot be blank."
+      mention_notification_title: "%{site} mention by %{user} on %{title}"
+      url_title: "Reply to %{user}"
+      reply_notification_title: "%{site} reply by %{user} on %{title}"
+      reply_notification_username: "Reply to %{user}"
+      deleted_by_mod: "Thread removed by moderator %{moderator}"
+      deleted_reason: ": %{reason}"
+      no_reason: "No reason given"
+      deleted_by_author: "Comment removed by author"

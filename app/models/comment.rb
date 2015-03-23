@@ -29,13 +29,13 @@ class Comment < ActiveRecord::Base
 
   validate do
     self.comment.to_s.strip == "" &&
-      errors.add(:comment, "cannot be blank.")
+      errors.add(:comment, I18n.t('models.comment.cant_be_blank'))
 
     self.user_id.blank? &&
-      errors.add(:user_id, "cannot be blank.")
+      errors.add(:user_id, I18n.t('models.comment.cant_be_blank'))
 
     self.story_id.blank? &&
-      errors.add(:story_id, "cannot be blank.")
+      errors.add(:story_id, I18n.t('models.comment.cant_be_blank'))
 
     (m = self.comment.to_s.strip.match(/\A(t)his([\.!])?$\z/i)) &&
       errors.add(:base, (m[1] == "T" ? "N" : "n") + "ope" + m[2].to_s)
@@ -203,11 +203,10 @@ class Comment < ActiveRecord::Base
 
         if u.pushover_mentions?
           u.pushover!({
-            :title => "#{Rails.application.name} mention by " <<
-              "#{self.user.username} on #{self.story.title}",
+            :title => I18n.t('models.comment.mention_notification_title', site: Rails.application.name, user: self.user.username, title: self.story.title ),
             :message => self.plaintext_comment,
             :url => self.url,
-            :url_title => "Reply to #{self.user.username}",
+            :url_title => I18n.t('models.comment.url_title', user: self.user.username )
           })
         end
       end
@@ -227,11 +226,10 @@ class Comment < ActiveRecord::Base
 
       if u.pushover_replies?
         u.pushover!({
-          :title => "#{Rails.application.name} reply from " <<
-            "#{self.user.username} on #{self.story.title}",
+          :title => I18n.t('models.comment.reply_notification_title', site: Rails.application.name, user: self.user.username, title: self.story.title ),
           :message => self.plaintext_comment,
           :url => self.url,
-          :url_title => "Reply to #{self.user.username}",
+          :url_title => I18n.t('models.comment.reply_notification_username', user: self.user.username )
         })
       end
     end
@@ -256,11 +254,10 @@ class Comment < ActiveRecord::Base
 
   def gone_text
     if self.is_moderated?
-      "Thread removed by moderator " <<
-        self.moderation.try(:moderator).try(:username).to_s << ": " <<
-        (self.moderation.try(:reason) || "No reason given")
+      I18n.t('models.comment.deleted_by_mod', moderator: self.moderation.try(:moderator).try(:username).to_s) <<
+      I18n.t('models.comment.deleted_reason', reason: self.moderation.try(:reason) ) || I18n.t('models.comment.no_reason')
     else
-      "Comment removed by author"
+      I18n.t('models.comment.deleted_by_author')
     end
   end
 
