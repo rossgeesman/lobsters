@@ -61,4 +61,28 @@ en:
       title: "Search"
     settings:
       settings_title: "Account Settings"
+      account_deleted: "Your account has been deleted."
+      password_unverified: "Your password could not be verified."
+      update_success: "Successfully updated settings."
+    signup:
+      already_signedup: "You are already signed up."
+      signup_title: "Signup"
+      invalid_invitiation: "Invalid or expired invitation"
+      welcome_message: "Welcome to %{site}, %{user}!"
+    stories:
+      submit_title: "Submit Story"
+      uneditable: "You cannot edit that story."
+      edit_title: "Edit Story"
+      already_posted: "This URL has already been submitted recently."
+      merged: "\"%{story}\" has been merged into this story."
+      removed: "[Story removed]"
+      missing: "can't find story"
+      invalid_reason: "invalid reason"
+      cant_downvote: "not permitted to downvote"
+      ok: "ok"
+      cant_find_or_manage: "Could not find story or you are not authorized to manage it."
+    users:
+      showing_user_title: "User %{user}"
+      user_title: "Users"
+      user_invitation: "Pass Along an Invitation"
 

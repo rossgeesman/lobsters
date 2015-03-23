@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
   def show
     @showing_user = User.where(:username => params[:username]).first!
-    @title = "User #{@showing_user.username}"
+    @title = t('controllers.users.showing_user_title', user: @showing_user.username )
   end
 
   def tree
-    @title = "Users"
+    @title = t('controllers.users.user_title')
 
     if params[:by].to_s == "karma"
       @users = User.order("karma DESC, id ASC").to_a
@@ -19,6 +19,6 @@ class UsersController < ApplicationController
   end
 
   def invite
-    @title = "Pass Along an Invitation"
+    @title = t('controllers.users.user_invitation')
   end
 end
