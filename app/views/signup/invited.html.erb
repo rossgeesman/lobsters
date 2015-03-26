@@ -14,7 +14,7 @@
     <%= error_messages_for(@new_user) %>
 
     <p>
-    <%= f.label :invitation, t('views.signup.invite.invited_by') %>, :class => "required" %>
+    <%= f.label :invitation, t('views.signup.invite.invited_by'), :class => "required" %>
     <span class="d">
       <a href="/u/<%= @invitation.user.username %>" target="_blank"><%=
         @invitation.user.username %></a>
@@ -71,7 +71,7 @@
     </div>
 
     <p>
-    <%= submit_tag t('views.signup.invite.signup_button') %>
+    <%= submit_tag t('views.signup.invited.signup_button') %>
     </p>
   <% end %>
 </div>

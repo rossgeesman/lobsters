@@ -17,33 +17,20 @@ class Moderation < ActiveRecord::Base
 
     if self.story
       m.recipient_user_id = self.story.user_id
-      m.subject = "Your story has been edited by a moderator"
-      m.body = "Your story [#{self.story.title}](" <<
-        "#{self.story.comments_url}) has been edited by a moderator with " <<
-        "the following changes:\n" <<
-        "\n" <<
-        "> *#{self.action}*\n"
+      m.subject = I18n.t('models.moderation.moderated_message_subject')
+      m.body = I18n.t('models.moderation.moderated_message_body1', story: self.story.title, url: self.story.comments_url, changes: self.action )
 
       if self.reason.present?
-        m.body << "\n" <<
-          "The reason given:\n" <<
-          "\n" <<
-          "> *#{self.reason}*\n"
+        m.body << I18n.t('models.moderation.moderated_message_body2', reason: self.reason )
       end
 
     elsif self.comment
       m.recipient_user_id = self.comment.user_id
-      m.subject = "Your comment has been moderated"
-      m.body = "Your comment on [#{self.comment.story.title}](" <<
-        "#{self.comment.story.comments_url}) has been moderated:\n" <<
-        "\n" <<
-        "> *#{self.comment.comment}*\n"
+      m.subject = I18n.t('models.moderation.moderated_comment_subject')
+      m.body = I18n.t('models.moderation.moderated_comment_body1', story: self.comment.story.title, url: self.comment.story.comments_url, comment: self.comment.comment )
 
       if self.reason.present?
-        m.body << "\n" <<
-          "The reason given:\n" <<
-          "\n" <<
-          "> *#{self.reason}*\n"
+        m.body << I18n.t('models.moderation.moderated_comment_body2', reason: self.reason )
       end
 
     else
@@ -51,8 +38,7 @@ class Moderation < ActiveRecord::Base
       return
     end
 
-    m.body << "\n" <<
-      "*This is an automated message.*"
+    m.body << I18n.t('models.moderation.automated_message')
 
     m.save
   end
