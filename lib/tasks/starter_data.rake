@@ -8,7 +8,7 @@ class StarterDataGenerator
       "디자인", "빅데이터", "DB", "SQL", "마이크로소프트", "사업", "규제", "메이커", "다음카카오", "앱", "애널리틱스", "창업"]
   end
 
-  def generate(feed_url: feed_url)
+  def generate(feed_url:)
     user = User.where(email: @user_email).first
     raise "Can't find user email(#{@user_email})" if user.nil?
 
@@ -59,7 +59,8 @@ namespace :starter_data do
       'http://besuccess.com/feed/',
       'http://zdnetkorea.feedsportal.com/c/34249/f/622757/index.rss',
       'http://feeds.feedburner.com/bloter',
-      'http://www.memoriesreloaded.net/feeds/posts/default'
+      'http://www.memoriesreloaded.net/feeds/posts/default',
+      'https://feeds.feedburner.com/imaso'
     ].each do |feed|
       generator.generate(feed_url: feed)
     end
