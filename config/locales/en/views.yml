@@ -34,9 +34,10 @@ en:
         login_btn: "Login"
         reset_pw: "Reset your password"
         forgot_pw: "Forgot your password?"
-        instructions_1_html: 'Not a user yet?  Signup is by invitation only to combat spam and increase 
-        accountability.  If you know <a href=/u/>a current user</a> of the site, ask them for an'
-        instructions_2_html: 'invitation or <a href="/invitations/request">request one publicly</a>.'
+        instructions_1_html: |
+          Not a user yet?  Signup is by invitation only to combat spam and increase 
+          accountability.  If you know <a href=/u/>a current user</a> of the site, ask them for an
+        instructions_2_html: 'invitation or <a href="/invitations/request">request one pubicly</a>.'
         instructions_3: "invitation."
       set_new_password:
         set_new_password: "Set New Password"
@@ -47,7 +48,8 @@ en:
     ban_notification:
       notify:
         banned_from: "You have been banned from %{application_name} by %{username} for:"
-        description: You are no longer allowed to login to the site.  If you wish, you can
+        description: | 
+          You are no longer allowed to login to the site.  If you wish, you can
           discuss this ban with the moderator by replying to this e-mail.
     messages:
       index:
@@ -126,13 +128,14 @@ en:
         comment_mention_settings: "Comment Mention Notification Settings"
         private_message_settings: "Private Message Notification Settings"
         mailing_list_settings: "Mailing List Settings"
-        mailing_list_exp_html: 'When enabled, you will receive all newly submitted stories and comments to
-                                your e-mail address entered above, except those stories (and their
-                                comments) filtered by your <a href="/filters">tag filters</a>.  All e-mail
-                                messages will appear to be sent to your private list address shown below
-                                which you can filter on, and e-mails you send to that address will be
-                                posted under your account on this website.  You should keep your unique
-                                list address private to prevent others from posting comments as you.'
+        mailing_list_exp_html: | 
+          When enabled, you will receive all newly submitted stories and comments to
+          your e-mail address entered above, except those stories (and their
+          comments) filtered by your <a href="/filters">tag filters</a>.  All e-mail
+          messages will appear to be sent to your private list address shown below
+          which you can filter on, and e-mails you send to that address will be
+          posted under your account on this website.  You should keep your unique
+          list address private to prevent others from posting comments as you.
         receive_list_email: "Receive List E-mails:"
         no_emails: "No E-mails"
         only_stories: "Only Stories"
@@ -140,21 +143,23 @@ en:
         list_address: "List Address:"
         save_btn: "Save All Settings"
         delete_account: "Delete Account"
-        delete_account_exp: "To permanently delete your account, verify your current password below.
-                             Your account will be put into a deleted state, your comments will be marked
-                             as deleted and no longer readable by any other users, and your private
-                             messages will be deleted.  Your submitted stories will not be deleted.
-                             Your username will remain reserved and will not be available to use on any
-                             other account."
+        delete_account_exp: |
+          To permanently delete your account, verify your current password below.
+          Your account will be put into a deleted state, your comments will be marked
+          as deleted and no longer readable by any other users, and your private
+          messages will be deleted.  Your submitted stories will not be deleted.
+          Your username will remain reserved and will not be available to use on any
+          other account.
         verify_pw: "Verify Password:"
         delete_acct_btn: "Yes, Delete My Account"
         invite_new_user: "Invite a New User"
     signup:
       index:
         create_account: "Create an Account"
-        instructions_html: 'Signup is currently by invitation only to combat spam and increase 
-        accountability.  If you know <a href="/u/">a current user</a> of the site, 
-        ask them for an invitation.'
+        instructions_html: |
+          Signup is currently by invitation only to combat spam and increase 
+          accountability.  If you know <a href="/u/">a current user</a> of the site, 
+          ask them for an invitation.
       invite:
         title: "Pass Along an Invitation"
         instructions_1: "This community can only grow when members invite new users, just as"
@@ -171,7 +176,9 @@ en:
         ized: "'ized"
         password: "Password:"
         password_again: "Password (again):"
-        about_instructions: "Want to tell us about yourself?  It's optional, but it will be visible in your public profile and can be changed at any time."
+        about_instructions: |
+          Want to tell us about yourself?  It's optional, but it will be visible in your public 
+          profile and can be changed at any time.
         about: "About:"
         markdown: "Markdown formatting available"
         signup_button: "Signup"
@@ -185,7 +192,7 @@ en:
         notice_2: "ago, but may be submitted again."
         notice_3: "Please view the"
         notice_4: "previous discussion"
-        notice_5: "for this story first.  If the content has changed or warrants new discussion, you may submit it again."
+        notice_5: "for this story first. If the content has changed or warrants new discussion, you may submit it again."
         url: "URL:"
         fetch_title: "Fetch Title"
         title: "Title:"
@@ -197,23 +204,28 @@ en:
         placeholder: "Optional when submitting a URL; please see guidelines"
         guidelines: "Story submission guidelines"
         submit_to: "Submit to"
-        guideline_1: "To be able to easily submit a page you're viewing in your browser to %{site_name},
-        drag the bookmarklet to the right to your bookmark bar. You'll be taken to this page with the viewed
-        page's URL and title."
-        guideline_2: "When submitting a URL, the text field is optional and should only
-        be used when additional context or explanation of the URL is
-        needed.  Commentary or opinion should be reserved for a comment,
-        so that it can be voted on separately from the story."
-        guideline_3_html: "Do not editorialize story titles, but when the original story's
-        title has no context or is unclear, please change it.  <strong>Please
-        remove extraneous components from titles such as the name of the
-        site or section.</strong>"
-        guideline_4: "If no tags clearly apply to the story you are submitting, chances
-        are it does not belong here.  Do not overreach with tags if they
-        are not the primary focus of the story."
-        guideline_5: "When the story being submitted is more than a year or so old,
-        please add the year the story was written to the post title in
-        parentheses."
+        guideline_1: |
+          To be able to easily submit a page you're viewing in your browser to %{site_name},
+          drag the bookmarklet to the right to your bookmark bar. You'll be taken to this page with the viewed
+          age's URL and title.
+        guideline_2: |
+          When submitting a URL, the text field is optional and should only
+          be used when additional context or explanation of the URL is
+          needed. Commentary or opinion should be reserved for a comment,
+          so that it can be voted on separately from the story.
+        guideline_3_html: |
+          Do not editorialize story titles, but when the original story's
+          title has no context or is unclear, please change it.  <strong>Please
+          remove extraneous components from titles such as the name of the
+          site or section.</strong>
+        guideline_4: |
+          If no tags clearly apply to the story you are submitting, chances
+          are it does not belong here.  Do not overreach with tags if they
+          are not the primary focus of the story.
+        guideline_5: |
+          When the story being submitted is more than a year or so old,
+          please add the year the story was written to the post title in
+          parentheses.
       _listdetail:
         moderated_by: "[Story removed by"
         moderator: "moderator"
@@ -255,7 +267,10 @@ en:
         copyright: "All story content copyright of its respective owner."
     users:
       _invitationform:
-        instructions_html: Invitations are unlimited, but persons you invite will be associated with your account in the <a href="/u">user tree</a> and you may be responsible for them if they cause problems.  Please use your discretion when inviting persons you don't personally know. 
+        instructions_html: |
+          Invitations are unlimited, but persons you invite will be associated with your account in 
+          the <a href="/u">user tree</a> and you may be responsible for them if they cause problems. 
+          Please use your discretion when inviting persons you don't personally know. 
         email: "Email Address:"
         memo: "Memo to User:"
         send_btn: "Send"
@@ -320,7 +335,10 @@ en:
     filters:
       legend: Filtered Tags
       desc: "To hide stories from the home page that have been tagged with certain tags, check them below."
-      nonuser_desc_html: 'Since you are not logged in, your filters will be stored in a long-lasting browser cookie.  To permanently store your tag filters and have them work across browsers, <a href="/login">login</a> to your account.'
+      nonuser_desc_html: |
+        Since you are not logged in, your filters will be stored in a long-lasting browser cookie.
+        To permanently store your tag filters and have them work across browsers, 
+        <a href="/login">login</a> to your account.
       hide_table_header: Hide
       tag_table_header: Tag
       description_table_header: Description
@@ -346,17 +364,21 @@ en:
         inline_image_desc_html: "<tt>![alt text](http://example.com/image.jpg)</tt> (only allowed in story text"
     home:
       index:
-        recent_leader_html: '<em>The <a href="/newest">newest</a> stories with a random sampling of recently submitted stories that have not yet reached the front page.</em>'
+        recent_leader_html: |
+          <em>The <a href="/newest">newest</a> stories with a random sampling of recently submitted 
+          stories that have not yet reached the front page.</em>
         page: "Page %{page}"
       rss:
         comments: Comments
     invitations:
       build:
         legend: Request an Invitation
-        description_1_html: If you don't know (or can't find) an <a href="/u/">existing user</a> from whom to request an invitation,
-          you can make a public request for one.
-          This will display your name and memo to all other logged-in users who can then send you an invitation if they recognize you.
-        description_2: Your e-mail address must be valid and confirmed by visiting a URL e-mailed to
+        description_1_html: |
+          If you don't know (or can't find) an <a href="/u/">existing user</a> from whom to request 
+          an invitation, you can make a public request for one. This will display your name and memo 
+          to all other logged-in users who can then send you an invitation if they recognize you.
+        description_2: |
+          Your e-mail address must be valid and confirmed by visiting a URL e-mailed to
           you before your request will be displayed.  Your e-mail address will not be
           shown to any other users (except moderators).
         name_label: "Name:"
