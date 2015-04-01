@@ -118,7 +118,7 @@ class Story < ActiveRecord::Base
     Story.connection.adapter_name.match(/mysql/i) ? "signed" : "integer"
   end
 
-  def self.create_with_entry(entry: entry, user: user, tag_names: tag_names)
+  def self.create_with_entry(entry:, user:, tag_names:)
     find_similar_by_url(nomalize_url(entry.url)) ||
       create!(
         url: entry.url,
