@@ -123,7 +123,8 @@ class Story < ActiveRecord::Base
         url: entry.url,
         user: user,
         title: entry.title,
-        tags_a: tag_names
+        tags_a: tag_names,
+        created_at: entry.published
       )
   end
 

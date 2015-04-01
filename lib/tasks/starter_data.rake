@@ -59,7 +59,8 @@ namespace :starter_data do
       'http://besuccess.com/feed/',
       'http://zdnetkorea.feedsportal.com/c/34249/f/622757/index.rss',
       'http://feeds.feedburner.com/bloter',
-      'http://www.memoriesreloaded.net/feeds/posts/default'
+      'http://www.memoriesreloaded.net/feeds/posts/default',
+      'https://feeds.feedburner.com/imaso'
     ].each do |feed|
       generator.generate(feed_url: feed)
     end
