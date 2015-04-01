@@ -64,7 +64,10 @@ Lobsters::Application.configure do
     :password  => ENV["MANDRILL_APIKEY"]
   }
 
-  config.action_mailer.default_url_options = { :host => Rails.application.domain }
+  config.action_mailer.default_options = {
+    from: "#{Rails.application.name} <#{Rails.application.secrets.email}>"
+  }
+  config.action_mailer.default_url_options = { host: Rails.application.domain }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
 
