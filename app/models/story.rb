@@ -48,15 +48,14 @@ class Story < ActiveRecord::Base
         if self.new_record? && (s = Story.find_similar_by_url(self.url))
           self.already_posted_story = s
           if s.is_recent?
-            errors.add(:url, "has already been submitted within the past " <<
-              "#{RECENT_DAYS} days")
+            errors.add(:url, I18n.t('models.story.already_submitted', number: RECENT_DAYS ))
           end
         end
       else
-        errors.add(:url, "is not valid")
+        errors.add(:url, I18n.t('models.story.url_invalid'))
       end
     elsif self.description.to_s.strip == ""
-      errors.add(:description, "must contain text if no URL posted")
+      errors.add(:description, I18n.t('models.story.text_missing'))
     end
 
     check_tags
@@ -197,19 +196,16 @@ class Story < ActiveRecord::Base
 
     self.taggings.each do |t|
       if !t.tag.valid_for?(u)
-        raise "#{u.username} does not have permission to use privileged " <<
-          "tag #{t.tag.tag}"
+        raise I18n.t('models.story.tag_unpermitted', user: u.username, tag: t.tag.tag )
       elsif t.tag.inactive? && !t.new_record?
         # stories can have inactive tags as long as they existed before
-        raise "#{u.username} cannot add inactive tag #{t.tag.tag}"
+        raise I18n.t('models.story.tag_inactive', user: u.username, tag: t.tag.tag )
       end
     end
 
     if !self.taggings.reject{|t| t.marked_for_destruction? || t.tag.is_media?
     }.any?
-      errors.add(:base, "Must have at least one non-media (PDF, video) " <<
-        "tag.  If no tags apply to your content, it probably doesn't " <<
-        "belong here.")
+      errors.add(:base, t('models.story.needs_tag'))
     end
   end
 

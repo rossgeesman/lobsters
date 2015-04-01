@@ -9,7 +9,7 @@ class StoriesController < ApplicationController
     :update ]
 
   def create
-    @title = "Submit Story"
+    @title = t('controllers.stories.submit_title')
     @cur_url = "/stories/new"
 
     @story = Story.new(story_params)
@@ -29,7 +29,7 @@ class StoriesController < ApplicationController
 
   def destroy
     if !@story.is_editable_by_user?(@user)
-      flash[:error] = "You cannot edit that story."
+      flash[:error] = t('controllers.stories.uneditable')
       return redirect_to "/"
     end
 
@@ -47,11 +47,11 @@ class StoriesController < ApplicationController
 
   def edit
     if !@story.is_editable_by_user?(@user)
-      flash[:error] = "You cannot edit that story."
+      flash[:error] = t('controllers.stories.uneditable')
       return redirect_to "/"
     end
 
-    @title = "Edit Story"
+    @title = t('controllers.stories.edit_title')
 
     if @story.merged_into_story
       @story.merge_story_short_id = @story.merged_into_story.short_id
@@ -70,7 +70,7 @@ class StoriesController < ApplicationController
   end
 
   def new
-    @title = "Submit Story"
+    @title = t('controllers.stories.submit_title')
     @cur_url = "/stories/new"
 
     @story = Story.new
@@ -82,7 +82,7 @@ class StoriesController < ApplicationController
         if s.is_recent?
           # user won't be able to submit this story as new, so just redirect
           # them to the previous story
-          flash[:success] = "This URL has already been submitted recently."
+          flash[:success] = t('controllers.stories.already_posted')
           return redirect_to s.comments_path
         else
           # user will see a warning like with preview screen
@@ -115,14 +115,14 @@ class StoriesController < ApplicationController
     @story = Story.where(:short_id => params[:id]).first!
 
     if @story.merged_into_story
-      flash[:success] = "\"#{@story.title}\" has been merged into this story."
+      flash[:success] = t('controllers.stories.merged', story: @story.title )
       return redirect_to @story.merged_into_story.comments_path
     end
 
     if @story.can_be_seen_by_user?(@user)
       @title = @story.title
     else
-      @title = "[Story removed]"
+      @title = t('controllers.stories.removed')
     end
 
     @short_url = @story.short_id_url
@@ -156,7 +156,7 @@ class StoriesController < ApplicationController
   def undelete
     if !(@story.is_editable_by_user?(@user) &&
     @story.is_undeletable_by_user?(@user))
-      flash[:error] = "You cannot edit that story."
+      flash[:error] = t('controllers.stories.uneditable')
       return redirect_to "/"
     end
 
@@ -169,7 +169,7 @@ class StoriesController < ApplicationController
 
   def update
     if !@story.is_editable_by_user?(@user)
-      flash[:error] = "You cannot edit that story."
+      flash[:error] = t('controllers.stories.uneditable')
       return redirect_to "/"
     end
 
@@ -191,7 +191,7 @@ class StoriesController < ApplicationController
 
   def unvote
     if !(story = find_story)
-      return render :text => "can't find story", :status => 400
+      return render :text => t('controllers.stories.missing'), :status => 400
     end
 
     Vote.vote_thusly_on_story_or_comment_for_user_because(0, story.id,
@@ -202,7 +202,7 @@ class StoriesController < ApplicationController
 
   def upvote
     if !(story = find_story)
-      return render :text => "can't find story", :status => 400
+      return render :text => t('controllers.stories.missing'), :status => 400
     end
 
     Vote.vote_thusly_on_story_or_comment_for_user_because(1, story.id,
@@ -213,15 +213,15 @@ class StoriesController < ApplicationController
 
   def downvote
     if !(story = find_story)
-      return render :text => "can't find story", :status => 400
+      return render :text => t('controllers.stories.missing'), :status => 400
     end
 
     if !Vote::STORY_REASONS[params[:reason]]
-      return render :text => "invalid reason", :status => 400
+      return render :text => t('controllers.stories.invalid_reason'), :status => 400
     end
 
     if !@user.can_downvote?(story)
-      return render :text => "not permitted to downvote", :status => 400
+      return render :text => t('controllers.stories.cant_downvote'), :status => 400
     end
 
     Vote.vote_thusly_on_story_or_comment_for_user_because(-1, story.id,
@@ -232,24 +232,24 @@ class StoriesController < ApplicationController
 
   def hide
     if !(story = find_story)
-      return render :text => "can't find story", :status => 400
+      return render :text => t('controllers.stories.missing'), :status => 400
     end
 
     Vote.vote_thusly_on_story_or_comment_for_user_because(0, story.id,
       nil, @user.id, "H")
 
-    render :text => "ok"
+    render :text => t('controllers.stories.ok')
   end
 
   def unhide
     if !(story = find_story)
-      return render :text => "can't find story", :status => 400
+      return render :text => t('controllers.stories.missing'), :status => 400
     end
 
     Vote.vote_thusly_on_story_or_comment_for_user_because(0, story.id,
       nil, @user.id, nil)
 
-    render :text => "ok"
+    render :text => t('controllers.stories.ok')
   end
 
 private
@@ -286,8 +286,7 @@ private
     end
 
     if !@story
-      flash[:error] = "Could not find story or you are not authorized " <<
-        "to manage it."
+      flash[:error] = t('controllers.stories.cant_find_or_manage')
       redirect_to "/"
       return false
     end

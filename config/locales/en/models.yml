@@ -1,0 +1,48 @@
+en:
+  models:
+    comment:
+      cant_be_blank: "cannot be blank."
+      mention_notification_title: "%{site} mention by %{user} on %{title}"
+      url_title: "Reply to %{user}"
+      reply_notification_title: "%{site} reply by %{user} on %{title}"
+      reply_notification_username: "Reply to %{user}"
+      deleted_by_mod: "Thread removed by moderator %{moderator}"
+      deleted_reason: ": %{reason}"
+      no_reason: "No reason given"
+      deleted_by_author: "Comment removed by author"
+    invitation: 
+      email_invalid: "is not valid."
+    message:
+      pushover_title: "%{site} message from %{user}: %{title}"
+      pushover_url_title: "Reply to %{user}"
+    moderation:
+      moderated_message_subject: "Your story has been edited by a moderator"
+      moderated_message_body1: "Your story [%{story}] (%{url}) has been edited by a moderator with the following changes:\n\n> *%{changes}*\n"
+      moderated_message_body2: "\nThe reason given:\n\n> *%{reason}*\n"
+      moderated_comment_subject: "Your comment has been moderated"
+      moderated_comment_body1: "Your comment on [%{story}](%{url}) has been moderated:\n\n> *%{comment}*\n"
+      moderated_comment_body2: "\nThe reason given:\n\n> *%{reason}*\n"
+      automated_message: "\n*This is an automated message.*"
+    story:
+      already_submitted: "has already been submitted within the past %{number} days"
+      url_invalid: "is not valid"
+      text_missing: "must contain text if no URL posted"
+      tag_unpermitted: "%{user} does not have permission to use privileged tag %{tag}"
+      tag_inactive: "%{user} cannot add inactive tag %{tag}"
+      needs_tag: "Must have at least one non-media (PDF, video) tag. If no tags apply to your content, it probably doesn't belong here."
+    vote:
+      comment:
+        off_topic: "Off-topic"
+        incorrect: "Incorrect"
+        me_too: "Me-too"
+        troll: "Troll"
+        spam: "Spam"
+        cancel: "Cancel"
+      story:
+        off_topic: "Off-topic"
+        already_posted: "Already Posted"
+        poorly_tagged: "Poorly Tagged"
+        poorly_titled: "Poorly Titled"
+        spam: "Spam"
+        cancel: "Cancel"
+        low_quality: "Low Quality"

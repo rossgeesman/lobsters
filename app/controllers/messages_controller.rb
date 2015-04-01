@@ -4,7 +4,7 @@ class MessagesController < ApplicationController
 
   def index
     @cur_url = "/messages"
-    @title = "Messages"
+    @title = t('controllers.messages.messages_title')
 
     @new_message = Message.new
 
@@ -18,7 +18,7 @@ class MessagesController < ApplicationController
 
   def sent
     @cur_url = "/messages"
-    @title = "Messages Sent"
+    @title = t('controllers.messages.messages_sent')
 
     @direction = :out
     @messages = @user.undeleted_sent_messages
@@ -30,7 +30,7 @@ class MessagesController < ApplicationController
 
   def create
     @cur_url = "/messages"
-    @title = "Messages"
+    @title = t('controllers.messages.messages_title')
 
     @new_message = Message.new(message_params)
     @new_message.author_user_id = @user.id
@@ -39,8 +39,7 @@ class MessagesController < ApplicationController
     @messages = @user.undeleted_received_messages
 
     if @new_message.save
-      flash[:success] = "Your message has been sent to " <<
-        @new_message.recipient.username.to_s << "."
+      flash[:success] = t('controllers.messages.message_sent', user: @new_message.recipient.username.to_s ) 
       return redirect_to "/messages"
     else
       render :action => "index"
@@ -63,7 +62,7 @@ class MessagesController < ApplicationController
     if @message.subject.match(/^re:/i)
       @new_message.subject = @message.subject
     else
-      @new_message.subject = "Re: #{@message.subject}"
+      @new_message.subject = t('controllers.messages.message_subject', subject: @message.subject )
     end
   end
 
@@ -78,7 +77,7 @@ class MessagesController < ApplicationController
 
     @message.save!
 
-    flash[:success] = "Deleted message."
+    flash[:success] = t('controllers.messages.message_deleted')
 
     if @message.author_user_id == @user.id
       return redirect_to "/messages/sent"
@@ -107,7 +106,7 @@ class MessagesController < ApplicationController
       end
     end
 
-    flash[:success] = "Deleted #{deleted} message#{deleted == 1 ? "" : "s"}."
+    flash[:success] = t('controllers.messages.batch_deleted', number: deleted, plural: deleted == 1 ? "" : "s" )
 
     @user.update_unread_message_count!
 
@@ -137,7 +136,7 @@ private
       end
     end
 
-    flash[:error] = "Could not find message."
+    flash[:error] = t('controllers.messages.message_not_found')
     redirect_to "/messages"
     return false
   end

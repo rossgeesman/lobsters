@@ -155,10 +155,9 @@ class HomeController < ApplicationController
     }
 
     if length[:dur] > 1
-      @heading = @title = "Top Stories of the Past #{length[:dur]} " <<
-        length[:intv] << "s"
+      @heading = @title = t('controllers.home.topstories_plural', length: length[:dur], interval: length[:intv] )
     else
-      @heading = @title = "Top Stories of the Past " << length[:intv]
+      @heading = @title = t('controllers.home.topstories_singular', interval: length[:intv] )
     end
 
     render :action => "index"
@@ -169,17 +168,17 @@ class HomeController < ApplicationController
       paginate @user.upvoted_stories.order('votes.id DESC')
     }
 
-    @heading = @title = "Your Upvoted Stories"
+    @heading = @title = t('controllers.home.upvotedstories')
     @cur_url = "/upvoted"
 
-    @rss_link = { :title => "RSS 2.0 - Your Upvoted Stories",
+    @rss_link = { :title => t('controllers.home.upvotedstories_rss'),
       :href => "/upvoted.rss#{(@user ? "?token=#{@user.rss_token}" : "")}" }
 
     respond_to do |format|
       format.html { render :action => "index" }
       format.rss {
         if @user && params[:token].present?
-          @title += " - Private feed for #{@user.username}"
+          @title += t('controllers.home.privatefeed', username: @user.username )
         end
 
         render :action => "rss", :layout => false

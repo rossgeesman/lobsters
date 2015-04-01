@@ -4,7 +4,7 @@
       username: @invitation.user.username,
       name: Rails.application.name,
       root_url: Rails.application.root_url,
-      memo: @invitation.memo.present? ? raw("\n\n   #{@invitation.memo}") : "") %>
+      memo: @invitation.memo.present? ? raw("\n\n   #{@invitation.memo}") : "" ) %>
 
 <%= t('views.invitation_mailer.invitation.p2') %>
 

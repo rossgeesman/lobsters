@@ -3,7 +3,7 @@ class Invitation < ActiveRecord::Base
 
   validate do
     unless email.to_s.match(/\A[^@ ]+@[^ @]+\.[^ @]+\z/)
-      errors.add(:email, "is not valid")
+      errors.add(:email, I18n.t('models.invitation.email_invalid'))
     end
   end
 

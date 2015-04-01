@@ -1,6 +1,6 @@
 class SearchController < ApplicationController
   def index
-    @title = "Search"
+    @title = t('controllers.search.title')
     @cur_url = "/search"
 
     if params[:q].present?
