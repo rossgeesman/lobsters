@@ -8,23 +8,26 @@
 /* generics */
 
 /* force a vertical scrollbar to avoid page-shifting */
+
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
 html {
 	overflow-y: scroll;
 }
 
 body, textarea, input, button {
-	font-family: "helvetica neue", arial, sans-serif;
+	font-family: 'Nanum Gothic', serif;
 	font-size: 9.5pt;
 	color: #333;
 }
 
 a {
-	color: #2562dc;
+	color: #218D6C;
 	cursor: pointer;
 }
 
 ol.stories.list li.story div.details span.link a:visited {
-	color: #7395d9;
+	color: #949494;
 }
 
 h1 {
@@ -44,8 +47,7 @@ div.s {
 }
 
 a.tag {
-	background-color: #fffcd7;
-	border: 1px solid #d5d458;
+	background-color: #D5D5D5;
 	border-radius: 10px;
 	color: #555;
 	font-size: 7.5pt;
@@ -257,15 +259,19 @@ div#inside {
 }
 
 #l_holder {
-	background: #ee0000 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAAZiS0dEAL0ALQAtZF7+HAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wCCBAuLt2rqugAAACMSURBVDjL1ZMxCsJQEERfRPEk9im9mGfxBpaCnaXmBraeQEidKsKz2eIb/peEIOLAwu4Ws7PMbsUAKlOwYCaWmd4aWCV1B4yXpR59R61SitwKDdBHfgPaSTsF8zOmHz5NLykAeCRqvuvCfxGcgP0YF3ZqHy7c1Yt6jfo8dCF3idvkQjcRRVQ/f6bZBC+RBoeZnlCyqwAAAABJRU5ErkJggg==) no-repeat;
+	background-color: #da552f;
+    background-image: url("shovel.png");
+    background-size: 20px;
 	background-position: center;
+	background-repeat: no-repeat;
 	float: left;
 	display: block;
-	width: 16px;
-	height: 16px;
+	width: 20px;
+	height: 20px;
 	padding: 1px;
-	margin-left: 4px;
+	margin-left: 1.5px;
 	margin-right: 11px;
+	border-radius: 50%;
 }
 
 #header h1 {
@@ -290,7 +296,7 @@ div#inside {
 }
 
 .headerlinks a {
-	color: #777;
+	color: #717171;
 	text-decoration: none;
 	padding-right: 0.75em;
 }
@@ -310,7 +316,7 @@ div#inside {
 }
 
 #header a.new_messages {
-	color: #ac130d;
+	color: #da552f;
 }
 
 div#leader {
@@ -397,7 +403,7 @@ div.voters {
 }
 
 div.voters div.score {
-	color: #aaa;
+	color: #717171;
 	font-size: 9pt;
 	margin-top: 1px;
 	margin-bottom: -3px;
@@ -411,7 +417,7 @@ li.story div.voters div.score {
 
 div.voters .upvoter,
 div.voters .downvoter {
-	border-color: transparent transparent #bbb transparent;
+	border-color: transparent transparent #717171 transparent;
 	border-style: solid;
 	border-width: 6px;
 	text-decoration: none;
@@ -425,7 +431,7 @@ div.voters .downvoter {
 
 div.voters .upvoter:hover,
 .upvoted div.voters .upvoter {
-	border-bottom-color: #ac130d;
+	border-bottom-color: #da552f;
 }
 
 div.voters .upvoter {
