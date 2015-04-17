@@ -34,8 +34,7 @@
   <div id="wrapper">
     <div id="header">
       <div id="headerleft">
-        <a id="l_holder" style="background-color: #<%= sprintf("%02x%02x%02x",
-        [ 255, (@traffic * 7).floor + 50.0 ].min, 0, 0) %>;" href="/"
+        <a id="l_holder" href="/"
         title="<%= Rails.application.name %> (<%= @traffic.to_i %>)"></a>
 
         <% links = {
