@@ -65,7 +65,18 @@ in a `config/initializers/production.rb` or similar file:
 $ docker build -t sapzil/sapzil .
 ```
 
-##### Run application(production enviroment)
+##### Run application(development)
+
+modify `docker-compose.yml` depends your computer
+
+```
+$ docker-compose up
+```
+
+[Installing docker-compose](https://docs.docker.com/compose/install/)
+
+
+##### Run application(production)
 
 ```
 $ docker run -it --rm \
