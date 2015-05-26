@@ -1,0 +1,17 @@
+web:
+  build: .
+  ports:
+    - "80:80"
+    - "443:443"
+  volumes:
+    - ~/.ssl/sapzil.co.crt:/app/config/ssl/ssl.crt
+    - ~/.ssl/sapzil.co.key:/app/config/ssl/ssl.key
+    - ~/.ssl/sub.class1.server.sha2.ca.pem:/app/config/ssl/ca.pem
+  environment:
+    - SECRET_KEY_BASE=secretkey
+    - DATABASE_URL=postgres://postgres:@192.168.59.103/sn_production
+    - SAPZIL_DOMAIN=sapzil.co
+    - SAPZIL_NAME=Sapzil
+    - MANDRILL_USERNAME=
+    - MANDRILL_APIKEY=
+    - GENERATOR_EMAIL=
